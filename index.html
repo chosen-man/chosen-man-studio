@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Chosen Man Studio — bespoke web design and development for contractors, local businesses, and growing companies. Direct access. Zero agency bloat.">
+  <meta name="theme-color" content="#0B110E">
+  <title>Chosen Man Studio — Web Design &amp; Development</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+<div id="cms-tactical-canvas">
+  <style>
+    html { scroll-behavior: smooth; background: #0B110E; }
+    body { margin: 0; background: #0B110E; }
+    #cms-tactical-canvas {
+      --cms-bg: #0b110e;
+      --cms-panel: #131e18;
+      --cms-panel-2: #101913;
+      --cms-primary: #f1f5f9;
+      --cms-muted: #94a3b8;
+      --cms-brass: #c5a059;
+      --cms-green: #253c2e;
+      --cms-border: rgba(255, 255, 255, 0.07);
+      width: 100%;
+      overflow: hidden;
+      background: var(--cms-bg);
+      color: var(--cms-primary);
+      font-family: Inter, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    #cms-tactical-canvas * { box-sizing: border-box; }
+    #cms-tactical-canvas a { color: inherit; text-decoration: none; }
+    #cms-tactical-canvas button,
+    #cms-tactical-canvas input,
+    #cms-tactical-canvas textarea { font: inherit; }
+    #cms-tactical-canvas .cms-wrap { width: min(100% - 42px, 1160px); margin-inline: auto; }
+    #cms-tactical-canvas .cms-mono { font-family: "JetBrains Mono", monospace; }
+    #cms-tactical-canvas .cms-noise { position: relative; isolation: isolate; }
+    #cms-tactical-canvas .cms-noise::before { content: ""; position: absolute; inset: 0; z-index: -2; background-image: radial-gradient(rgba(197,160,89,.16) .7px, transparent .7px); background-size: 18px 18px; mask-image: linear-gradient(to bottom, #000, transparent 86%); opacity: .55; }
+    #cms-tactical-canvas .cms-noise::after { content: ""; position: absolute; z-index: -1; width: 520px; height: 520px; top: 40px; right: -180px; border-radius: 50%; background: rgba(37,60,46,.44); filter: blur(120px); }
+    #cms-tactical-canvas .cms-header { position: sticky; top: 0; z-index: 20; background: rgba(11,17,14,.82); border-bottom: 1px solid var(--cms-border); backdrop-filter: blur(18px); }
+    #cms-tactical-canvas .cms-header-inner { min-height: 72px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; }
+    #cms-tactical-canvas .cms-logo { display: flex; align-items: center; gap: 11px; width: fit-content; }
+    #cms-tactical-canvas .cms-logo-mark { position: relative; width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid rgba(197,160,89,.55); color: var(--cms-brass); font: 600 9px "JetBrains Mono", monospace; }
+    #cms-tactical-canvas .cms-logo-mark::before,
+    #cms-tactical-canvas .cms-logo-mark::after { content: ""; position: absolute; background: var(--cms-brass); opacity: .35; }
+    #cms-tactical-canvas .cms-logo-mark::before { width: 22px; height: 1px; }
+    #cms-tactical-canvas .cms-logo-mark::after { width: 1px; height: 22px; }
+    #cms-tactical-canvas .cms-logo strong { display: block; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-logo small { display: block; margin-top: 3px; color: var(--cms-muted); font: 400 7px "JetBrains Mono", monospace; letter-spacing: .18em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-nav { display: flex; gap: 28px; color: var(--cms-muted); font: 500 9px "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-nav a:hover { color: var(--cms-brass); }
+    #cms-tactical-canvas .cms-header-actions { justify-self: end; display: flex; align-items: center; gap: 10px; }
+    #cms-tactical-canvas .cms-status { display: inline-flex; align-items: center; gap: 7px; padding: 8px 10px; border: 1px solid var(--cms-border); background: rgba(255,255,255,.025); color: #cbd5e1; font: 500 8px "JetBrains Mono", monospace; letter-spacing: .06em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-status i { width: 6px; height: 6px; border-radius: 50%; background: #7fb38f; box-shadow: 0 0 12px rgba(127,179,143,.7); }
+    #cms-tactical-canvas .cms-header-cta { display: inline-flex; align-items: center; gap: 8px; padding: 10px 13px; background: var(--cms-primary); color: var(--cms-bg); font: 600 8px "JetBrains Mono", monospace; letter-spacing: .06em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-hero { display: grid; grid-template-columns: minmax(0,1.08fr) minmax(340px,.92fr); gap: 56px; align-items: center; padding-block: 105px 88px; }
+    #cms-tactical-canvas .cms-kicker { display: flex; align-items: center; gap: 11px; margin: 0 0 24px; color: var(--cms-brass); font: 500 9px "JetBrains Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-kicker::before { content: ""; width: 31px; height: 1px; background: var(--cms-brass); }
+    #cms-tactical-canvas .cms-hero h1 { max-width: 740px; margin: 0; font-size: clamp(52px,7.4vw,96px); font-weight: 600; line-height: .9; letter-spacing: -.07em; }
+    #cms-tactical-canvas .cms-hero h1 span { color: var(--cms-muted); font-weight: 400; }
+    #cms-tactical-canvas .cms-lede { max-width: 590px; margin: 30px 0 0; color: var(--cms-muted); font-size: 16px; line-height: 1.65; }
+    #cms-tactical-canvas .cms-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-top: 34px; }
+    #cms-tactical-canvas .cms-main-cta { min-width: 215px; min-height: 50px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; background: var(--cms-brass); color: var(--cms-bg); font: 600 9px "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; transition: transform .2s ease, background .2s ease; }
+    #cms-tactical-canvas .cms-main-cta:hover { transform: translateY(-2px); background: #d2b476; }
+    #cms-tactical-canvas .cms-direct { color: var(--cms-muted); font: 400 9px "JetBrains Mono", monospace; line-height: 1.6; letter-spacing: .05em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-direct b { color: var(--cms-primary); font-weight: 500; }
+    #cms-tactical-canvas .cms-terminal { overflow: hidden; border: 1px solid var(--cms-border); background: rgba(19,30,24,.92); box-shadow: 0 32px 90px rgba(0,0,0,.28); backdrop-filter: blur(12px); }
+    #cms-tactical-canvas .cms-terminal-bar { height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 14px; border-bottom: 1px solid var(--cms-border); background: rgba(255,255,255,.018); }
+    #cms-tactical-canvas .cms-terminal-dots { display: flex; gap: 5px; }
+    #cms-tactical-canvas .cms-terminal-dots i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.18); }
+    #cms-tactical-canvas .cms-terminal-tabs { display: flex; align-self: stretch; }
+    #cms-tactical-canvas .cms-terminal-tab { position: relative; border: 0; border-left: 1px solid var(--cms-border); border-bottom: 1px solid transparent; padding: 0 12px; background: transparent; color: var(--cms-muted); cursor: pointer; font: 500 8px "JetBrains Mono", monospace; letter-spacing: .07em; transition: color .18s ease, background-color .18s ease, border-color .18s ease; }
+    #cms-tactical-canvas .cms-terminal-tab:hover { color: var(--cms-primary); background: rgba(255,255,255,.025); }
+    #cms-tactical-canvas .cms-terminal-tab[aria-pressed="true"] { color: var(--cms-brass); border-bottom-color: var(--cms-brass); background: rgba(197,160,89,.07); }
+    #cms-tactical-canvas .cms-code { min-height: 330px; max-width: 100%; margin: 0; padding: 26px; overflow-x: auto; overflow-y: hidden; color: #b9c5bd; font: 400 11px/1.85 "JetBrains Mono", monospace; letter-spacing: .01em; white-space: pre; -webkit-overflow-scrolling: touch; -webkit-font-smoothing: antialiased; scrollbar-color: rgba(197,160,89,.45) transparent; scrollbar-width: thin; }
+    #cms-tactical-canvas .cms-code .key { color: var(--cms-brass); }
+    #cms-tactical-canvas .cms-code .value { color: #dce9df; }
+    #cms-tactical-canvas .cms-code .comment { color: #617269; }
+    #cms-tactical-canvas .cms-terminal-foot { display: flex; justify-content: space-between; padding: 12px 14px; border-top: 1px solid var(--cms-border); color: var(--cms-muted); font: 400 8px "JetBrains Mono", monospace; letter-spacing: .06em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-terminal-foot b { color: #7fb38f; font-weight: 500; }
+    #cms-tactical-canvas .cms-rule { border: 0; border-top: 1px solid var(--cms-border); margin: 0; }
+    #cms-tactical-canvas .cms-capabilities { padding-block: 86px 105px; }
+    #cms-tactical-canvas .cms-section-head { display: grid; grid-template-columns: 1fr .55fr; gap: 40px; align-items: end; margin-bottom: 40px; }
+    #cms-tactical-canvas .cms-section-head h2 { margin: 0; font-size: clamp(38px,5vw,60px); font-weight: 600; line-height: .95; letter-spacing: -.055em; }
+    #cms-tactical-canvas .cms-section-head p { margin: 0; color: var(--cms-muted); font-size: 14px; line-height: 1.65; }
+    #cms-tactical-canvas .cms-bento { display: grid; grid-template-columns: 1.15fr .85fr .85fr; grid-template-rows: 238px 238px; gap: 12px; }
+    #cms-tactical-canvas .cms-bento-card { position: relative; overflow: hidden; padding: 26px; border: 1px solid var(--cms-border); background: var(--cms-panel); transition: transform .2s ease, border-color .2s ease, background-color .2s ease; }
+    #cms-tactical-canvas .cms-bento-card:hover { transform: translateY(-2px); border-color: rgba(197,160,89,.38); background-color: #15221b; }
+    #cms-tactical-canvas .cms-bento-card::after { content: ""; position: absolute; width: 180px; height: 180px; right: -90px; bottom: -100px; border: 1px solid rgba(197,160,89,.14); border-radius: 50%; }
+    #cms-tactical-canvas .cms-bento-card.cms-feature { grid-row: 1 / 3; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(145deg, var(--cms-green), var(--cms-panel) 56%); }
+    #cms-tactical-canvas .cms-bento-card.cms-wide { grid-column: 2 / 4; }
+    #cms-tactical-canvas .cms-card-top { display: flex; align-items: center; justify-content: space-between; }
+    #cms-tactical-canvas .cms-card-index { color: var(--cms-brass); font: 500 8px "JetBrains Mono", monospace; letter-spacing: .1em; }
+    #cms-tactical-canvas .cms-card-icon { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid var(--cms-border); color: var(--cms-brass); }
+    #cms-tactical-canvas .cms-card-icon svg { width: 15px; height: 15px; }
+    #cms-tactical-canvas .cms-bento-card h3 { max-width: 400px; margin: 34px 0 10px; font-size: 24px; font-weight: 500; letter-spacing: -.035em; }
+    #cms-tactical-canvas .cms-bento-card p { max-width: 460px; margin: 0; color: var(--cms-muted); font-size: 13px; line-height: 1.65; }
+    #cms-tactical-canvas .cms-feature h3 { margin-top: auto; font-size: clamp(30px,4vw,46px); }
+    #cms-tactical-canvas .cms-feature .cms-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 30px; background: var(--cms-border); }
+    #cms-tactical-canvas .cms-specs span { padding: 14px; background: var(--cms-panel-2); color: var(--cms-muted); font: 400 8px/1.5 "JetBrains Mono", monospace; letter-spacing: .05em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-specs b { display: block; color: var(--cms-primary); font-size: 12px; font-weight: 500; }
+    #cms-tactical-canvas .cms-contact { background: var(--cms-panel-2); border-block: 1px solid var(--cms-border); }
+    #cms-tactical-canvas .cms-contact-inner { min-height: 330px; display: grid; grid-template-columns: 1fr auto; gap: 50px; align-items: center; }
+    #cms-tactical-canvas .cms-contact h2 { margin: 10px 0 0; font-size: clamp(42px,6vw,72px); font-weight: 600; line-height: .95; letter-spacing: -.06em; }
+    #cms-tactical-canvas .cms-contact h2 span { color: var(--cms-brass); }
+    #cms-tactical-canvas .cms-contact-block { width: min(100%, 350px); padding-left: 22px; border-left: 1px solid var(--cms-brass); }
+    #cms-tactical-canvas .cms-contact-block p { margin: 0 0 18px; color: var(--cms-muted); font-size: 13px; line-height: 1.65; }
+    #cms-tactical-canvas .cms-email { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding-bottom: 10px; border-bottom: 1px solid var(--cms-border); color: var(--cms-primary); font: 500 10px "JetBrains Mono", monospace; }
+    #cms-tactical-canvas .cms-email:hover { color: var(--cms-brass); }
+    #cms-tactical-canvas .cms-footer { min-height: 110px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 28px; color: var(--cms-muted); font: 400 8px/1.6 "JetBrains Mono", monospace; letter-spacing: .07em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-footer-links { display: flex; gap: 22px; }
+    #cms-tactical-canvas .cms-footer > span { justify-self: end; text-align: right; }
+    @media (max-width: 860px) {
+      #cms-tactical-canvas .cms-header-inner { grid-template-columns: 1fr auto; }
+      #cms-tactical-canvas .cms-nav { display: none; }
+      #cms-tactical-canvas .cms-hero { grid-template-columns: 1fr; }
+      #cms-tactical-canvas .cms-terminal { max-width: 640px; }
+      #cms-tactical-canvas .cms-bento { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      #cms-tactical-canvas .cms-bento-card.cms-feature { grid-row: auto; grid-column: 1 / 3; min-height: 400px; }
+      #cms-tactical-canvas .cms-bento-card.cms-wide { grid-column: 1 / 3; }
+      #cms-tactical-canvas .cms-bento-card { min-height: 230px; }
+    }
+    @media (max-width: 560px) {
+      #cms-tactical-canvas .cms-wrap { width: calc(100% - 28px); }
+      #cms-tactical-canvas .cms-header-inner { min-height: 66px; }
+      #cms-tactical-canvas .cms-status { display: none; }
+      #cms-tactical-canvas .cms-header-cta { padding: 9px 10px; }
+      #cms-tactical-canvas .cms-hero { padding-block: 74px 64px; }
+      #cms-tactical-canvas .cms-code { min-height: 300px; padding: 20px; font-size: 9px; }
+      #cms-tactical-canvas .cms-section-head,
+      #cms-tactical-canvas .cms-contact-inner { grid-template-columns: 1fr; }
+      #cms-tactical-canvas .cms-bento { grid-template-columns: 1fr; }
+      #cms-tactical-canvas .cms-bento-card.cms-feature,
+      #cms-tactical-canvas .cms-bento-card.cms-wide { grid-column: 1; }
+      #cms-tactical-canvas .cms-contact-inner { padding-block: 72px; }
+      #cms-tactical-canvas .cms-footer { grid-template-columns: 1fr 1fr; padding-block: 30px; }
+      #cms-tactical-canvas .cms-footer-links { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #cms-tactical-canvas * { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+
+  <header class="cms-header">
+    <div class="cms-header-inner cms-wrap">
+      <a class="cms-logo" href="#cms-tactical-top" aria-label="Chosen Man Studio home">
+        <span class="cms-logo-mark" aria-hidden="true">CM</span>
+        <span><strong>Chosen Man</strong><small>Studio</small></span>
+      </a>
+      <nav class="cms-nav" aria-label="Primary navigation"><a href="#cms-tactical-work">Capabilities</a><a href="#cms-tactical-contact">Contact</a></nav>
+      <div class="cms-header-actions"><span class="cms-status"><i></i>Available for Q3/Q4</span><a class="cms-header-cta" href="#cms-tactical-contact">Start a project <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </header>
+
+  <main class="cms-noise" id="cms-tactical-top">
+    <section class="cms-hero cms-wrap">
+      <div>
+        <p class="cms-kicker">Independent web studio · Yorkshire spirit</p>
+        <h1>Websites built<br><span>to earn their keep.</span></h1>
+        <p class="cms-lede">Bespoke web design and development for contractors, local businesses, and growing companies. Show the work. Build trust. Win better enquiries.</p>
+        <div class="cms-hero-actions"><a class="cms-main-cta" href="#cms-tactical-contact">Commission the studio <span aria-hidden="true">↗</span></a><p class="cms-direct">One principal.<br><b>Every decision.</b></p></div>
+      </div>
+
+      <div class="cms-terminal" aria-label="Interactive development preview">
+        <div class="cms-terminal-bar"><span class="cms-terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span><div class="cms-terminal-tabs"><button class="cms-terminal-tab" type="button" data-code-tab="build" aria-pressed="true">build.ts</button><button class="cms-terminal-tab" type="button" data-code-tab="audit" aria-pressed="false">audit.log</button></div></div>
+        <pre class="cms-code" id="cms-code-output" aria-live="polite"><span class="comment">// chosen-man.studio / build parameters</span>
+
+<span class="key">const</span> website = {
+  firstImpression: <span class="value">"credible"</span>,
+  showcase: <span class="value">"real work"</span>,
+  enquiries: <span class="value">"simple"</span>,
+  mobile: <span class="value">"fast"</span>
+};
+
+<span class="key">await</span> studio.designWithPurpose();
+<span class="key">await</span> studio.buildItProperly();
+
+<span class="comment">// status: ready for deployment</span></pre>
+        <div class="cms-terminal-foot"><span>CMS / FIELD NOTE 001</span><b>● SYSTEM READY</b></div>
+      </div>
+    </section>
+
+    <hr class="cms-rule">
+
+    <section class="cms-capabilities cms-wrap" id="cms-tactical-work">
+      <header class="cms-section-head"><div><p class="cms-kicker">Core capabilities</p><h2>Good-looking sites.<br>Built for business.</h2></div><p>Strategy, design, development, and launch stay in one pair of hands—from the first conversation to the finished website.</p></header>
+      <div class="cms-bento">
+        <article class="cms-bento-card cms-feature"><div class="cms-card-top"><span class="cms-card-index">01 / BESPOKE WEBSITES</span><span class="cms-card-icon"><i data-lucide="layout-template" aria-hidden="true"></i></span></div><div><h3>Your best work, presented properly.</h3><p>Custom websites that make a strong first impression, show what you do, and give customers a clear reason to get in touch.</p><div class="cms-specs"><span><b>Original</b>web design</span><span><b>Complete</b>development</span></div></div></article>
+        <article class="cms-bento-card"><div class="cms-card-top"><span class="cms-card-index">02 / PERFORMANCE</span><span class="cms-card-icon"><i data-lucide="gauge" aria-hidden="true"></i></span></div><h3>Fast on every screen</h3><p>Lean builds, sharp mobile layouts, and accessibility handled from the start.</p></article>
+        <article class="cms-bento-card"><div class="cms-card-top"><span class="cms-card-index">03 / TRUST</span><span class="cms-card-icon"><i data-lucide="shield-check" aria-hidden="true"></i></span></div><h3>Secure where it matters</h3><p>Protected contact forms, dependable hosting, and sensible security without the jargon.</p></article>
+        <article class="cms-bento-card cms-wide"><div class="cms-card-top"><span class="cms-card-index">04 / DIRECT COLLABORATION</span><span class="cms-card-icon"><i data-lucide="handshake" aria-hidden="true"></i></span></div><h3>One point of contact. Start to finish.</h3><p>No sales layer and no confusing hand-offs. The person discussing your goals is the person designing, building, launching, and supporting the site.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <section class="cms-contact" id="cms-tactical-contact">
+    <div class="cms-contact-inner cms-wrap">
+      <div><p class="cms-kicker">Direct line</p><h2>Work worth doing?<br><span>Let’s discuss it.</span></h2></div>
+      <div class="cms-contact-block"><p>Send the objective, the constraints, and what a good result looks like. You’ll receive a considered reply—not an automated sequence.</p><a class="cms-email" href="mailto:hello@chosenman.studio">hello@chosenman.studio <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </section>
+
+  <footer class="cms-footer cms-wrap"><a class="cms-logo" href="#cms-tactical-top"><span class="cms-logo-mark" aria-hidden="true">CM</span><span><strong>Chosen Man</strong><small>Studio</small></span></a><div class="cms-footer-links"><a href="#cms-tactical-work">Capabilities</a><a href="#cms-tactical-contact">Contact</a></div><span>© 2026 · Northern craft<br>Worldwide delivery</span></footer>
+
+  <script>
+    (() => {
+      const root = document.getElementById('cms-tactical-canvas');
+      const output = root.querySelector('#cms-code-output');
+      const views = {
+        build: `<span class="comment">// chosen-man.studio / project brief</span>\n\n<span class="key">const</span> website = {\n  firstImpression: <span class="value">"credible"</span>,\n  showcase: <span class="value">"real work"</span>,\n  enquiries: <span class="value">"simple"</span>,\n  mobile: <span class="value">"fast"</span>\n};\n\n<span class="key">await</span> studio.designWithPurpose();\n<span class="key">await</span> studio.buildItProperly();\n\n<span class="comment">// status: ready for launch</span>`,
+        audit: `<span class="comment">[FIELD AUDIT / 14:32:08]</span>\n\n<span class="key">✓</span> semantic structure       <span class="value">passed</span>\n<span class="key">✓</span> keyboard navigation      <span class="value">passed</span>\n<span class="key">✓</span> render path              <span class="value">lean</span>\n<span class="key">✓</span> third-party weight       <span class="value">controlled</span>\n<span class="key">✓</span> ownership handoff        <span class="value">documented</span>\n\n<span class="comment">No template debt detected.\nNo agency layers present.</span>\n\n<span class="key">RESULT</span>  <span class="value">FIT FOR PURPOSE</span>`
+      };
+      root.querySelectorAll('[data-code-tab]').forEach((tab) => tab.addEventListener('click', () => {
+        root.querySelectorAll('[data-code-tab]').forEach((item) => item.setAttribute('aria-pressed', String(item === tab)));
+        output.innerHTML = views[tab.dataset.codeTab];
+      }));
+      root.querySelectorAll('a[href^="#cms-tactical-"]').forEach((link) => link.addEventListener('click', (event) => {
+        const target = root.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
+      }));
+      if (window.lucide) window.lucide.createIcons({attrs: {width: 16, height: 16}});
+    })();
+  </script>
+</div>
+</body>
+</html>
