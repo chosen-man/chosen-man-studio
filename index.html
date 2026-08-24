@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Chosen Man Studio — bespoke web design and development for contractors, local businesses, and growing companies. Direct access. Zero agency bloat.">
   <meta name="theme-color" content="#0B110E">
-  <title>Chosen Man Studio — Web Design &amp; Development</title>
+  <title>Chosen Man Studio - Web Development</title>
+  <link rel="icon" type="image/png" href="assets/chosen-man-mark.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
@@ -47,11 +48,8 @@
     #cms-tactical-canvas .cms-header { position: sticky; top: 0; z-index: 20; background: rgba(11,17,14,.82); border-bottom: 1px solid var(--cms-border); backdrop-filter: blur(18px); }
     #cms-tactical-canvas .cms-header-inner { min-height: 72px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; }
     #cms-tactical-canvas .cms-logo { display: flex; align-items: center; gap: 11px; width: fit-content; }
-    #cms-tactical-canvas .cms-logo-mark { position: relative; width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid rgba(197,160,89,.55); color: var(--cms-brass); font: 600 9px "JetBrains Mono", monospace; }
-    #cms-tactical-canvas .cms-logo-mark::before,
-    #cms-tactical-canvas .cms-logo-mark::after { content: ""; position: absolute; background: var(--cms-brass); opacity: .35; }
-    #cms-tactical-canvas .cms-logo-mark::before { width: 22px; height: 1px; }
-    #cms-tactical-canvas .cms-logo-mark::after { width: 1px; height: 22px; }
+    #cms-tactical-canvas .cms-logo-mark { width: 40px; height: 40px; display: grid; place-items: center; flex: 0 0 auto; }
+    #cms-tactical-canvas .cms-logo-mark img { display: block; width: 100%; height: 100%; object-fit: contain; }
     #cms-tactical-canvas .cms-logo strong { display: block; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-logo small { display: block; margin-top: 3px; color: var(--cms-muted); font: 400 7px "JetBrains Mono", monospace; letter-spacing: .18em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-nav { display: flex; gap: 28px; color: var(--cms-muted); font: 500 9px "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
@@ -111,7 +109,7 @@
     #cms-tactical-canvas .cms-bento-card { position: relative; overflow: hidden; padding: 26px; border: 1px solid var(--cms-border); background: var(--cms-panel); transition: transform .2s ease, border-color .2s ease, background-color .2s ease; }
     #cms-tactical-canvas .cms-bento-card:hover { transform: translateY(-2px); border-color: rgba(197,160,89,.38); background-color: #15221b; }
     #cms-tactical-canvas .cms-bento-card::after { content: ""; position: absolute; width: 180px; height: 180px; right: -90px; bottom: -100px; border: 1px solid rgba(197,160,89,.14); border-radius: 50%; }
-    #cms-tactical-canvas .cms-bento-card.cms-feature { grid-row: 1 / 3; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(145deg, var(--cms-green), var(--cms-panel) 56%); }
+    #cms-tactical-canvas .cms-bento-card.cms-feature { grid-row: 1 / 3; display: flex; flex-direction: column; justify-content: flex-start; background: linear-gradient(145deg, var(--cms-green), var(--cms-panel) 56%); }
     #cms-tactical-canvas .cms-bento-card.cms-wide { grid-column: 2 / 4; }
     #cms-tactical-canvas .cms-card-top { display: flex; align-items: center; justify-content: space-between; }
     #cms-tactical-canvas .cms-card-index { color: var(--cms-brass); font: 500 8px "JetBrains Mono", monospace; letter-spacing: .1em; }
@@ -119,8 +117,9 @@
     #cms-tactical-canvas .cms-card-icon svg { width: 15px; height: 15px; }
     #cms-tactical-canvas .cms-bento-card h3 { max-width: 400px; margin: 34px 0 10px; font-size: 24px; font-weight: 500; letter-spacing: -.035em; }
     #cms-tactical-canvas .cms-bento-card p { max-width: 460px; margin: 0; color: var(--cms-muted); font-size: 13px; line-height: 1.65; }
-    #cms-tactical-canvas .cms-feature h3 { margin-top: auto; font-size: clamp(30px,4vw,46px); }
-    #cms-tactical-canvas .cms-feature .cms-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 30px; background: var(--cms-border); }
+    #cms-tactical-canvas .cms-feature > div:last-child { min-height: 0; display: flex; flex: 1; flex-direction: column; }
+    #cms-tactical-canvas .cms-feature h3 { margin-top: 48px; font-size: clamp(30px,4vw,46px); }
+    #cms-tactical-canvas .cms-feature .cms-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: auto; background: var(--cms-border); }
     #cms-tactical-canvas .cms-specs > span { min-width: 0; padding: 14px; background: var(--cms-panel-2); color: var(--cms-muted); font: 400 8px/1.5 "JetBrains Mono", monospace; letter-spacing: .05em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-specs > span > span { display: block; margin-top: 3px; overflow-wrap: anywhere; }
     #cms-tactical-canvas .cms-specs b { display: block; color: var(--cms-primary); font-size: 12px; font-weight: 500; }
@@ -129,7 +128,7 @@
     #cms-tactical-canvas .cms-service-mark { position: relative; width: min(100%, 270px); min-height: 220px; display: flex; flex-direction: column; justify-content: space-between; padding: 24px; border: 1px solid rgba(197,160,89,.32); background: linear-gradient(145deg, rgba(197,160,89,.07), rgba(19,30,24,.3)); box-shadow: inset 0 0 0 7px #0e1712, inset 0 0 0 8px var(--cms-border); }
     #cms-tactical-canvas .cms-service-mark::before { content: ""; position: absolute; top: 47px; left: 24px; right: 24px; height: 1px; background: var(--cms-border); }
     #cms-tactical-canvas .cms-service-mark-top { display: flex; justify-content: space-between; color: var(--cms-brass); font: 500 8px "JetBrains Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
-    #cms-tactical-canvas .cms-service-v { color: var(--cms-primary); font: 600 62px/1 Inter, sans-serif; letter-spacing: -.08em; }
+    #cms-tactical-canvas .cms-service-v { color: var(--cms-primary); font: 600 34px/1 Inter, sans-serif; letter-spacing: .015em; }
     #cms-tactical-canvas .cms-service-v span { display: block; margin-top: 5px; color: var(--cms-brass); font: 500 9px/1.5 "JetBrains Mono", monospace; letter-spacing: .18em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-service-allies { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; color: var(--cms-muted); font: 500 8px "JetBrains Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-service-allies span:last-child { text-align: right; }
@@ -178,6 +177,7 @@
       #cms-tactical-canvas .cms-bento-card.cms-wide { grid-column: 1; }
       #cms-tactical-canvas .cms-service-inner { grid-template-columns: 1fr; gap: 42px; padding-block: 72px; }
       #cms-tactical-canvas .cms-service-mark { width: 210px; min-height: 190px; }
+      #cms-tactical-canvas .cms-service-v { font-size: 30px; }
       #cms-tactical-canvas .cms-contact { padding-block: 36px; }
       #cms-tactical-canvas .cms-contact-inner { padding: 42px 24px; gap: 38px; }
       #cms-tactical-canvas .cms-contact h2 { line-height: 1.05; }
@@ -197,7 +197,7 @@
   <header class="cms-header">
     <div class="cms-header-inner cms-wrap">
       <a class="cms-logo" href="#cms-tactical-top" aria-label="Chosen Man Studio home">
-        <span class="cms-logo-mark" aria-hidden="true">CM</span>
+        <span class="cms-logo-mark" aria-hidden="true"><img src="assets/chosen-man-mark.png" alt=""></span>
         <span><strong>Chosen Man</strong><small>Studio</small></span>
       </a>
       <nav class="cms-nav" aria-label="Primary navigation"><a href="#cms-tactical-work" data-i18n="navCapabilities">Capabilities</a><a href="#cms-tactical-contact" data-i18n="navContact">Contact</a></nav>
@@ -249,19 +249,19 @@
 
   <section class="cms-service-standard" aria-labelledby="cms-service-title">
     <div class="cms-service-inner cms-wrap">
-      <div class="cms-service-mark" aria-hidden="true"><div class="cms-service-mark-top"><span>CMS / 01</span><span>EST. 2026</span></div><div class="cms-service-v">V<span>Veteran owned</span></div><div class="cms-service-allies"><span>United Kingdom</span><i></i><span>United States</span></div></div>
+      <div class="cms-service-mark" aria-hidden="true"><div class="cms-service-mark-top"><span>CMS / 01</span><span>EST. 2026</span></div><div class="cms-service-v">VETERAN<span>U.S. Army</span></div><div class="cms-service-allies"><span>United States</span><i></i><span>United Kingdom</span></div></div>
       <div class="cms-service-copy"><p class="cms-kicker" data-i18n="veteranKicker">Veteran-owned studio</p><h2 id="cms-service-title" data-i18n="veteranTitle">Service shaped the standard.</h2><p data-i18n="veteranBody">Chosen Man Studio is veteran-owned. That experience informs how we work: clear communication, personal responsibility, and no fuss when there’s a job to finish. We’re proud to support fellow veterans and veteran-owned businesses on both sides of the Atlantic.</p><div class="cms-service-notes"><span data-i18n="veteranNoteA">Veteran-owned</span><span data-i18n="veteranNoteB">UK &amp; US community</span><span data-i18n="veteranNoteC">Supporting those who served</span></div></div>
     </div>
   </section>
 
   <section class="cms-contact" id="cms-tactical-contact">
     <div class="cms-contact-inner cms-wrap">
-      <div><p class="cms-kicker" data-i18n="contactKicker">Direct line</p><h2 data-i18n-html="contactTitle">Work worth doing?<br><span>Let’s discuss it.</span></h2></div>
+      <div><p class="cms-kicker" data-i18n="contactKicker">Direct line</p><h2 data-i18n-html="contactTitle">Have a project in mind?<br><span>Let’s talk.</span></h2></div>
       <div class="cms-contact-block"><p data-i18n="contactBody">Tell us what needs doing, what’s getting in the way, and what a good result looks like. You’ll get a considered reply—not an automated sequence.</p><a class="cms-email" href="mailto:hello@chosenman.studio">hello@chosenman.studio <span aria-hidden="true">↗</span></a></div>
     </div>
   </section>
 
-  <footer class="cms-footer cms-wrap"><a class="cms-logo" href="#cms-tactical-top"><span class="cms-logo-mark" aria-hidden="true">CM</span><span><strong>Chosen Man</strong><small>Studio</small></span></a><div class="cms-footer-links"><a href="#cms-tactical-work" data-i18n="navCapabilities">Capabilities</a><a href="#cms-tactical-contact" data-i18n="navContact">Contact</a></div><span data-i18n-html="footerMeta">© 2026 · Made properly in the North<br>Worldwide delivery</span></footer>
+  <footer class="cms-footer cms-wrap"><a class="cms-logo" href="#cms-tactical-top"><span class="cms-logo-mark" aria-hidden="true"><img src="assets/chosen-man-mark.png" alt=""></span><span><strong>Chosen Man</strong><small>Studio</small></span></a><div class="cms-footer-links"><a href="#cms-tactical-work" data-i18n="navCapabilities">Capabilities</a><a href="#cms-tactical-contact" data-i18n="navContact">Contact</a></div><span data-i18n-html="footerMeta">© 2026 · Made properly in the North<br>Worldwide delivery</span></footer>
 
   <script>
     (() => {
@@ -269,7 +269,7 @@
       const output = root.querySelector('#cms-code-output');
       const translations = {
         en: {
-          pageTitle: 'Chosen Man Studio — Web Design & Development',
+          pageTitle: 'Chosen Man Studio - Web Development',
           navCapabilities: 'Capabilities', navContact: 'Contact', availability: 'Available for Q3/Q4', headerCta: 'Start a project',
           heroKicker: 'Independent web studio · Yorkshire spirit', heroTitle: 'Websites built<br><span>to earn their keep.</span>',
           heroLede: 'Bespoke web design and development for contractors, local businesses, and growing companies. Show the work. Build trust. Win better enquiries.',
@@ -283,11 +283,11 @@
           cardFourIndex: '04 / DIRECT COLLABORATION', cardFourTitle: 'One point of contact. Start to finish.', cardFourBody: 'No sales layer and no confusing hand-offs. The person discussing your goals is the person designing, building, launching, and supporting the site.',
           veteranKicker: 'Veteran-owned studio', veteranTitle: 'Service shaped the standard.', veteranBody: 'Chosen Man Studio is veteran-owned. That experience informs how we work: clear communication, personal responsibility, and no fuss when there’s a job to finish. We’re proud to support fellow veterans and veteran-owned businesses on both sides of the Atlantic.',
           veteranNoteA: 'Veteran-owned', veteranNoteB: 'UK & US community', veteranNoteC: 'Supporting those who served',
-          contactKicker: 'Direct line', contactTitle: 'Work worth doing?<br><span>Let’s discuss it.</span>', contactBody: 'Tell us what needs doing, what’s getting in the way, and what a good result looks like. You’ll get a considered reply—not an automated sequence.',
+          contactKicker: 'Direct line', contactTitle: 'Have a project in mind?<br><span>Let’s talk.</span>', contactBody: 'Tell us what needs doing, what’s getting in the way, and what a good result looks like. You’ll get a considered reply—not an automated sequence.',
           footerMeta: '© 2026 · Made properly in the North<br>Worldwide delivery'
         },
         es: {
-          pageTitle: 'Chosen Man Studio — Diseño y Desarrollo Web',
+          pageTitle: 'Chosen Man Studio - Web Development',
           navCapabilities: 'Servicios', navContact: 'Contacto', availability: 'Disponible para T3/T4', headerCta: 'Iniciar un proyecto',
           heroKicker: 'Estudio web independiente · espíritu de Yorkshire', heroTitle: 'Webs creadas<br><span>para ganarse el jornal.</span>',
           heroLede: 'Diseño y desarrollo web a medida para contratistas, negocios locales y empresas en crecimiento. Muestra tu trabajo. Genera confianza. Consigue mejores oportunidades.',
@@ -305,7 +305,7 @@
           footerMeta: '© 2026 · Bien hecho en el Norte<br>Servicio internacional'
         },
         yk: {
-          pageTitle: 'Chosen Man Studio — Websites Done Reyt',
+          pageTitle: 'Chosen Man Studio - Web Development',
           navCapabilities: 'What we do', navContact: 'Gi’ us a shout', availability: 'Taking bookings Q3/Q4', headerCta: 'Gi’ us a shout',
           heroKicker: 'Independent web studio · built up North', heroTitle: 'Websites done reyt.<br><span>Built to earn their keep.</span>',
           heroLede: 'Bespoke web design and development for trades, local firms, and growing businesses. Show folk what tha can do. Build trust. Bring better work through t’door.',
