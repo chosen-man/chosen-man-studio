@@ -57,6 +57,11 @@
     #cms-tactical-canvas .cms-nav { display: flex; gap: 28px; color: var(--cms-muted); font: 500 9px "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-nav a:hover { color: var(--cms-brass); }
     #cms-tactical-canvas .cms-header-actions { justify-self: end; display: flex; align-items: center; gap: 10px; }
+    #cms-tactical-canvas .cms-language { display: inline-flex; align-items: stretch; border: 1px solid var(--cms-border); background: rgba(255,255,255,.018); }
+    #cms-tactical-canvas .cms-language button { min-width: 30px; border: 0; border-right: 1px solid var(--cms-border); padding: 8px 6px; background: transparent; color: var(--cms-muted); cursor: pointer; font: 500 7px "JetBrains Mono", monospace; letter-spacing: .07em; transition: color .18s ease, background-color .18s ease; }
+    #cms-tactical-canvas .cms-language button:last-child { border-right: 0; }
+    #cms-tactical-canvas .cms-language button:hover { color: var(--cms-primary); }
+    #cms-tactical-canvas .cms-language button[aria-pressed="true"] { background: rgba(197,160,89,.1); color: var(--cms-brass); }
     #cms-tactical-canvas .cms-status { display: inline-flex; align-items: center; gap: 7px; padding: 8px 10px; border: 1px solid var(--cms-border); background: rgba(255,255,255,.025); color: #cbd5e1; font: 500 8px "JetBrains Mono", monospace; letter-spacing: .06em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-status i { width: 6px; height: 6px; border-radius: 50%; background: #7fb38f; box-shadow: 0 0 12px rgba(127,179,143,.7); }
     #cms-tactical-canvas .cms-header-cta { display: inline-flex; align-items: center; gap: 8px; padding: 10px 13px; background: var(--cms-primary); color: var(--cms-bg); font: 600 8px "JetBrains Mono", monospace; letter-spacing: .06em; text-transform: uppercase; }
@@ -85,6 +90,14 @@
     #cms-tactical-canvas .cms-code .comment { color: #617269; }
     #cms-tactical-canvas .cms-terminal-foot { display: flex; justify-content: space-between; padding: 12px 14px; border-top: 1px solid var(--cms-border); color: var(--cms-muted); font: 400 8px "JetBrains Mono", monospace; letter-spacing: .06em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-terminal-foot b { color: #7fb38f; font-weight: 500; }
+    #cms-tactical-canvas .cms-egg-trigger { border: 0; padding: 0; background: transparent; color: inherit; cursor: pointer; font: inherit; letter-spacing: inherit; text-transform: inherit; transition: color .18s ease; }
+    #cms-tactical-canvas .cms-egg-trigger:hover,
+    #cms-tactical-canvas .cms-egg-trigger[aria-expanded="true"] { color: var(--cms-brass); }
+    #cms-tactical-canvas .cms-easter-egg { max-height: 0; overflow: hidden; border-top: 0 solid transparent; background: #0d1510; opacity: 0; transition: max-height .28s ease, opacity .2s ease, border-color .2s ease; }
+    #cms-tactical-canvas .cms-easter-egg.is-open { max-height: 90px; border-top: 1px solid var(--cms-border); opacity: 1; }
+    #cms-tactical-canvas .cms-easter-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 14px; color: var(--cms-muted); font: 400 8px/1.5 "JetBrains Mono", monospace; letter-spacing: .07em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-easter-inner strong { display: block; color: var(--cms-primary); font-weight: 500; }
+    #cms-tactical-canvas .cms-easter-inner a { flex: 0 0 auto; color: var(--cms-brass); }
     #cms-tactical-canvas .cms-rule { border: 0; border-top: 1px solid var(--cms-border); margin: 0; }
     #cms-tactical-canvas .cms-capabilities { padding-block: 86px 105px; }
     #cms-tactical-canvas .cms-section-head { display: grid; grid-template-columns: 1fr .55fr; gap: 40px; align-items: end; margin-bottom: 40px; }
@@ -106,6 +119,19 @@
     #cms-tactical-canvas .cms-feature .cms-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 30px; background: var(--cms-border); }
     #cms-tactical-canvas .cms-specs span { padding: 14px; background: var(--cms-panel-2); color: var(--cms-muted); font: 400 8px/1.5 "JetBrains Mono", monospace; letter-spacing: .05em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-specs b { display: block; color: var(--cms-primary); font-size: 12px; font-weight: 500; }
+    #cms-tactical-canvas .cms-service-standard { position: relative; border-top: 1px solid var(--cms-border); background: #0e1712; }
+    #cms-tactical-canvas .cms-service-inner { min-height: 360px; display: grid; grid-template-columns: .72fr 1.28fr; gap: 76px; align-items: center; }
+    #cms-tactical-canvas .cms-service-seal { position: relative; width: min(100%, 250px); aspect-ratio: 1; display: grid; place-items: center; border: 1px solid var(--cms-border); border-radius: 50%; color: var(--cms-brass); }
+    #cms-tactical-canvas .cms-service-seal::before,
+    #cms-tactical-canvas .cms-service-seal::after { content: ""; position: absolute; background: var(--cms-brass); opacity: .22; }
+    #cms-tactical-canvas .cms-service-seal::before { width: 74%; height: 1px; }
+    #cms-tactical-canvas .cms-service-seal::after { width: 1px; height: 74%; }
+    #cms-tactical-canvas .cms-flags { position: relative; z-index: 1; display: flex; gap: 12px; font-size: 18px; filter: saturate(.72); opacity: .82; }
+    #cms-tactical-canvas .cms-service-copy h2 { max-width: 620px; margin: 12px 0 18px; font-size: clamp(38px,5vw,58px); font-weight: 600; line-height: .98; letter-spacing: -.055em; }
+    #cms-tactical-canvas .cms-service-copy > p:last-of-type { max-width: 650px; margin: 0; color: var(--cms-muted); font-size: 14px; line-height: 1.75; }
+    #cms-tactical-canvas .cms-service-notes { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 24px; color: var(--cms-brass); font: 500 8px "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-service-notes span { display: inline-flex; align-items: center; gap: 8px; }
+    #cms-tactical-canvas .cms-service-notes span::before { content: ""; width: 4px; height: 4px; background: var(--cms-brass); transform: rotate(45deg); }
     #cms-tactical-canvas .cms-contact { background: var(--cms-panel-2); border-block: 1px solid var(--cms-border); }
     #cms-tactical-canvas .cms-contact-inner { min-height: 330px; display: grid; grid-template-columns: 1fr auto; gap: 50px; align-items: center; }
     #cms-tactical-canvas .cms-contact h2 { margin: 10px 0 0; font-size: clamp(42px,6vw,72px); font-weight: 600; line-height: .95; letter-spacing: -.06em; }
@@ -126,6 +152,7 @@
       #cms-tactical-canvas .cms-bento-card.cms-feature { grid-row: auto; grid-column: 1 / 3; min-height: 400px; }
       #cms-tactical-canvas .cms-bento-card.cms-wide { grid-column: 1 / 3; }
       #cms-tactical-canvas .cms-bento-card { min-height: 230px; }
+      #cms-tactical-canvas .cms-service-inner { grid-template-columns: .55fr 1.45fr; gap: 48px; }
     }
     @media (max-width: 560px) {
       #cms-tactical-canvas .cms-wrap { width: calc(100% - 28px); }
@@ -140,8 +167,14 @@
       #cms-tactical-canvas .cms-bento-card.cms-feature,
       #cms-tactical-canvas .cms-bento-card.cms-wide { grid-column: 1; }
       #cms-tactical-canvas .cms-contact-inner { padding-block: 72px; }
+      #cms-tactical-canvas .cms-service-inner { grid-template-columns: 1fr; gap: 42px; padding-block: 72px; }
+      #cms-tactical-canvas .cms-service-seal { width: 170px; }
+      #cms-tactical-canvas .cms-easter-inner { align-items: flex-start; flex-direction: column; }
       #cms-tactical-canvas .cms-footer { grid-template-columns: 1fr 1fr; padding-block: 30px; }
       #cms-tactical-canvas .cms-footer-links { display: none; }
+    }
+    @media (max-width: 410px) {
+      #cms-tactical-canvas .cms-header-cta { display: none; }
     }
     @media (prefers-reduced-motion: reduce) {
       #cms-tactical-canvas * { scroll-behavior: auto !important; transition-duration: .01ms !important; }
@@ -154,18 +187,18 @@
         <span class="cms-logo-mark" aria-hidden="true">CM</span>
         <span><strong>Chosen Man</strong><small>Studio</small></span>
       </a>
-      <nav class="cms-nav" aria-label="Primary navigation"><a href="#cms-tactical-work">Capabilities</a><a href="#cms-tactical-contact">Contact</a></nav>
-      <div class="cms-header-actions"><span class="cms-status"><i></i>Available for Q3/Q4</span><a class="cms-header-cta" href="#cms-tactical-contact">Start a project <span aria-hidden="true">↗</span></a></div>
+      <nav class="cms-nav" aria-label="Primary navigation"><a href="#cms-tactical-work" data-i18n="navCapabilities">Capabilities</a><a href="#cms-tactical-contact" data-i18n="navContact">Contact</a></nav>
+      <div class="cms-header-actions"><div class="cms-language" role="group" aria-label="Language"><button type="button" data-language="en" aria-pressed="true">EN</button><button type="button" data-language="es" aria-pressed="false">ES</button><button type="button" data-language="yk" aria-pressed="false">YK</button></div><span class="cms-status"><i></i><span data-i18n="availability">Available for Q3/Q4</span></span><a class="cms-header-cta" href="#cms-tactical-contact"><span data-i18n="headerCta">Start a project</span> <span aria-hidden="true">↗</span></a></div>
     </div>
   </header>
 
   <main class="cms-noise" id="cms-tactical-top">
     <section class="cms-hero cms-wrap">
       <div>
-        <p class="cms-kicker">Independent web studio · Yorkshire spirit</p>
-        <h1>Websites built<br><span>to earn their keep.</span></h1>
-        <p class="cms-lede">Bespoke web design and development for contractors, local businesses, and growing companies. Show the work. Build trust. Win better enquiries.</p>
-        <div class="cms-hero-actions"><a class="cms-main-cta" href="#cms-tactical-contact">Commission the studio <span aria-hidden="true">↗</span></a><p class="cms-direct">One principal.<br><b>Every decision.</b></p></div>
+        <p class="cms-kicker" data-i18n="heroKicker">Independent web studio · Yorkshire spirit</p>
+        <h1 data-i18n-html="heroTitle">Websites built<br><span>to earn their keep.</span></h1>
+        <p class="cms-lede" data-i18n="heroLede">Bespoke web design and development for contractors, local businesses, and growing companies. Show the work. Build trust. Win better enquiries.</p>
+        <div class="cms-hero-actions"><a class="cms-main-cta" href="#cms-tactical-contact"><span data-i18n="heroCta">Commission the studio</span> <span aria-hidden="true">↗</span></a><p class="cms-direct" data-i18n-html="heroDirect">Straight-talking.<br><b>Properly made.</b></p></div>
       </div>
 
       <div class="cms-terminal" aria-label="Interactive development preview">
@@ -183,36 +216,118 @@
 <span class="key">await</span> studio.buildItProperly();
 
 <span class="comment">// status: ready for deployment</span></pre>
-        <div class="cms-terminal-foot"><span>CMS / FIELD NOTE 001</span><b>● SYSTEM READY</b></div>
+        <div class="cms-terminal-foot"><button class="cms-egg-trigger" id="cms-egg-trigger" type="button" aria-expanded="false" aria-controls="cms-easter-egg">CMS / FIELD NOTE 001</button><b>● SYSTEM READY</b></div>
+        <aside class="cms-easter-egg" id="cms-easter-egg" aria-hidden="true" inert><div class="cms-easter-inner"><span><strong>Yorkshire mode: proper.</strong>Tha found the field note.</span><a href="https://www.youtube.com/watch?v=tE8d-uGmIWk&amp;t=3s" target="_blank" rel="noopener noreferrer">Hear it from Sean ↗</a></div></aside>
       </div>
     </section>
 
     <hr class="cms-rule">
 
     <section class="cms-capabilities cms-wrap" id="cms-tactical-work">
-      <header class="cms-section-head"><div><p class="cms-kicker">Core capabilities</p><h2>Good-looking sites.<br>Built for business.</h2></div><p>Strategy, design, development, and launch stay in one pair of hands—from the first conversation to the finished website.</p></header>
+      <header class="cms-section-head"><div><p class="cms-kicker" data-i18n="capabilitiesKicker">Core capabilities</p><h2 data-i18n-html="capabilitiesTitle">Good-looking sites.<br>Built for business.</h2></div><p data-i18n="capabilitiesIntro">Strategy, design, development, and launch stay in one pair of hands—from the first conversation to the finished website.</p></header>
       <div class="cms-bento">
-        <article class="cms-bento-card cms-feature"><div class="cms-card-top"><span class="cms-card-index">01 / BESPOKE WEBSITES</span><span class="cms-card-icon"><i data-lucide="layout-template" aria-hidden="true"></i></span></div><div><h3>Your best work, presented properly.</h3><p>Custom websites that make a strong first impression, show what you do, and give customers a clear reason to get in touch.</p><div class="cms-specs"><span><b>Original</b>web design</span><span><b>Complete</b>development</span></div></div></article>
-        <article class="cms-bento-card"><div class="cms-card-top"><span class="cms-card-index">02 / PERFORMANCE</span><span class="cms-card-icon"><i data-lucide="gauge" aria-hidden="true"></i></span></div><h3>Fast on every screen</h3><p>Lean builds, sharp mobile layouts, and accessibility handled from the start.</p></article>
-        <article class="cms-bento-card"><div class="cms-card-top"><span class="cms-card-index">03 / TRUST</span><span class="cms-card-icon"><i data-lucide="shield-check" aria-hidden="true"></i></span></div><h3>Secure where it matters</h3><p>Protected contact forms, dependable hosting, and sensible security without the jargon.</p></article>
-        <article class="cms-bento-card cms-wide"><div class="cms-card-top"><span class="cms-card-index">04 / DIRECT COLLABORATION</span><span class="cms-card-icon"><i data-lucide="handshake" aria-hidden="true"></i></span></div><h3>One point of contact. Start to finish.</h3><p>No sales layer and no confusing hand-offs. The person discussing your goals is the person designing, building, launching, and supporting the site.</p></article>
+        <article class="cms-bento-card cms-feature"><div class="cms-card-top"><span class="cms-card-index" data-i18n="cardOneIndex">01 / BESPOKE WEBSITES</span><span class="cms-card-icon"><i data-lucide="layout-template" aria-hidden="true"></i></span></div><div><h3 data-i18n="cardOneTitle">Your best work, presented properly.</h3><p data-i18n="cardOneBody">Custom websites that make a strong first impression, show what you do, and give customers a clear reason to get in touch.</p><div class="cms-specs"><span><b data-i18n="cardOneSpecAHead">Original</b><span data-i18n="cardOneSpecABody">web design</span></span><span><b data-i18n="cardOneSpecBHead">Complete</b><span data-i18n="cardOneSpecBBody">development</span></span></div></div></article>
+        <article class="cms-bento-card"><div class="cms-card-top"><span class="cms-card-index" data-i18n="cardTwoIndex">02 / PERFORMANCE</span><span class="cms-card-icon"><i data-lucide="gauge" aria-hidden="true"></i></span></div><h3 data-i18n="cardTwoTitle">Fast on every screen</h3><p data-i18n="cardTwoBody">Lean builds, sharp mobile layouts, and accessibility handled from the start.</p></article>
+        <article class="cms-bento-card"><div class="cms-card-top"><span class="cms-card-index" data-i18n="cardThreeIndex">03 / TRUST</span><span class="cms-card-icon"><i data-lucide="shield-check" aria-hidden="true"></i></span></div><h3 data-i18n="cardThreeTitle">Secure where it matters</h3><p data-i18n="cardThreeBody">Protected contact forms, dependable hosting, and sensible security without the jargon.</p></article>
+        <article class="cms-bento-card cms-wide"><div class="cms-card-top"><span class="cms-card-index" data-i18n="cardFourIndex">04 / DIRECT COLLABORATION</span><span class="cms-card-icon"><i data-lucide="handshake" aria-hidden="true"></i></span></div><h3 data-i18n="cardFourTitle">One point of contact. Start to finish.</h3><p data-i18n="cardFourBody">No sales layer and no confusing hand-offs. The person discussing your goals is the person designing, building, launching, and supporting the site.</p></article>
       </div>
     </section>
   </main>
 
-  <section class="cms-contact" id="cms-tactical-contact">
-    <div class="cms-contact-inner cms-wrap">
-      <div><p class="cms-kicker">Direct line</p><h2>Work worth doing?<br><span>Let’s discuss it.</span></h2></div>
-      <div class="cms-contact-block"><p>Send the objective, the constraints, and what a good result looks like. You’ll receive a considered reply—not an automated sequence.</p><a class="cms-email" href="mailto:hello@chosenman.studio">hello@chosenman.studio <span aria-hidden="true">↗</span></a></div>
+  <section class="cms-service-standard" aria-labelledby="cms-service-title">
+    <div class="cms-service-inner cms-wrap">
+      <div class="cms-service-seal" aria-hidden="true"><span class="cms-flags"><span aria-label="United Kingdom">🇬🇧</span><span aria-label="United States">🇺🇸</span></span></div>
+      <div class="cms-service-copy"><p class="cms-kicker" data-i18n="veteranKicker">Veteran-owned studio</p><h2 id="cms-service-title" data-i18n="veteranTitle">Service shaped the standard.</h2><p data-i18n="veteranBody">Chosen Man Studio is veteran-owned. That experience informs how we work: clear communication, personal responsibility, and no fuss when there’s a job to finish. We’re proud to support fellow veterans and veteran-owned businesses on both sides of the Atlantic.</p><div class="cms-service-notes"><span data-i18n="veteranNoteA">Veteran-owned</span><span data-i18n="veteranNoteB">UK &amp; US community</span><span data-i18n="veteranNoteC">Supporting those who served</span></div></div>
     </div>
   </section>
 
-  <footer class="cms-footer cms-wrap"><a class="cms-logo" href="#cms-tactical-top"><span class="cms-logo-mark" aria-hidden="true">CM</span><span><strong>Chosen Man</strong><small>Studio</small></span></a><div class="cms-footer-links"><a href="#cms-tactical-work">Capabilities</a><a href="#cms-tactical-contact">Contact</a></div><span>© 2026 · Northern craft<br>Worldwide delivery</span></footer>
+  <section class="cms-contact" id="cms-tactical-contact">
+    <div class="cms-contact-inner cms-wrap">
+      <div><p class="cms-kicker" data-i18n="contactKicker">Direct line</p><h2 data-i18n-html="contactTitle">Work worth doing?<br><span>Let’s discuss it.</span></h2></div>
+      <div class="cms-contact-block"><p data-i18n="contactBody">Tell us what needs doing, what’s getting in the way, and what a good result looks like. You’ll get a considered reply—not an automated sequence.</p><a class="cms-email" href="mailto:hello@chosenman.studio">hello@chosenman.studio <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </section>
+
+  <footer class="cms-footer cms-wrap"><a class="cms-logo" href="#cms-tactical-top"><span class="cms-logo-mark" aria-hidden="true">CM</span><span><strong>Chosen Man</strong><small>Studio</small></span></a><div class="cms-footer-links"><a href="#cms-tactical-work" data-i18n="navCapabilities">Capabilities</a><a href="#cms-tactical-contact" data-i18n="navContact">Contact</a></div><span data-i18n-html="footerMeta">© 2026 · Made properly in the North<br>Worldwide delivery</span></footer>
 
   <script>
     (() => {
       const root = document.getElementById('cms-tactical-canvas');
       const output = root.querySelector('#cms-code-output');
+      const translations = {
+        en: {
+          pageTitle: 'Chosen Man Studio — Web Design & Development',
+          navCapabilities: 'Capabilities', navContact: 'Contact', availability: 'Available for Q3/Q4', headerCta: 'Start a project',
+          heroKicker: 'Independent web studio · Yorkshire spirit', heroTitle: 'Websites built<br><span>to earn their keep.</span>',
+          heroLede: 'Bespoke web design and development for contractors, local businesses, and growing companies. Show the work. Build trust. Win better enquiries.',
+          heroCta: 'Commission the studio', heroDirect: 'Straight-talking.<br><b>Properly made.</b>',
+          capabilitiesKicker: 'Core capabilities', capabilitiesTitle: 'Good-looking sites.<br>Built for business.',
+          capabilitiesIntro: 'Strategy, design, development, and launch stay in one pair of hands—from the first conversation to the finished website.',
+          cardOneIndex: '01 / BESPOKE WEBSITES', cardOneTitle: 'Your best work, presented properly.', cardOneBody: 'Custom websites that make a strong first impression, show what you do, and give customers a clear reason to get in touch.',
+          cardOneSpecAHead: 'Original', cardOneSpecABody: 'web design', cardOneSpecBHead: 'Complete', cardOneSpecBBody: 'development',
+          cardTwoIndex: '02 / PERFORMANCE', cardTwoTitle: 'Fast on every screen', cardTwoBody: 'Lean builds, sharp mobile layouts, and accessibility handled from the start.',
+          cardThreeIndex: '03 / TRUST', cardThreeTitle: 'Secure where it matters', cardThreeBody: 'Protected contact forms, dependable hosting, and sensible security without the jargon.',
+          cardFourIndex: '04 / DIRECT COLLABORATION', cardFourTitle: 'One point of contact. Start to finish.', cardFourBody: 'No sales layer and no confusing hand-offs. The person discussing your goals is the person designing, building, launching, and supporting the site.',
+          veteranKicker: 'Veteran-owned studio', veteranTitle: 'Service shaped the standard.', veteranBody: 'Chosen Man Studio is veteran-owned. That experience informs how we work: clear communication, personal responsibility, and no fuss when there’s a job to finish. We’re proud to support fellow veterans and veteran-owned businesses on both sides of the Atlantic.',
+          veteranNoteA: 'Veteran-owned', veteranNoteB: 'UK & US community', veteranNoteC: 'Supporting those who served',
+          contactKicker: 'Direct line', contactTitle: 'Work worth doing?<br><span>Let’s discuss it.</span>', contactBody: 'Tell us what needs doing, what’s getting in the way, and what a good result looks like. You’ll get a considered reply—not an automated sequence.',
+          footerMeta: '© 2026 · Made properly in the North<br>Worldwide delivery'
+        },
+        es: {
+          pageTitle: 'Chosen Man Studio — Diseño y Desarrollo Web',
+          navCapabilities: 'Servicios', navContact: 'Contacto', availability: 'Disponible para T3/T4', headerCta: 'Iniciar un proyecto',
+          heroKicker: 'Estudio web independiente · espíritu de Yorkshire', heroTitle: 'Webs creadas<br><span>para ganarse el jornal.</span>',
+          heroLede: 'Diseño y desarrollo web a medida para contratistas, negocios locales y empresas en crecimiento. Muestra tu trabajo. Genera confianza. Consigue mejores oportunidades.',
+          heroCta: 'Encargar un proyecto', heroDirect: 'Trato directo.<br><b>Trabajo bien hecho.</b>',
+          capabilitiesKicker: 'Servicios principales', capabilitiesTitle: 'Webs atractivas.<br>Hechas para el negocio.',
+          capabilitiesIntro: 'Estrategia, diseño, desarrollo y lanzamiento permanecen en las mismas manos, desde la primera conversación hasta la web terminada.',
+          cardOneIndex: '01 / WEBS A MEDIDA', cardOneTitle: 'Tu mejor trabajo, bien presentado.', cardOneBody: 'Webs personalizadas que causan una gran primera impresión, muestran lo que haces y dan a tus clientes una razón clara para contactar.',
+          cardOneSpecAHead: 'Original', cardOneSpecABody: 'diseño web', cardOneSpecBHead: 'Completo', cardOneSpecBBody: 'desarrollo',
+          cardTwoIndex: '02 / RENDIMIENTO', cardTwoTitle: 'Rápida en cada pantalla', cardTwoBody: 'Desarrollo ligero, diseño móvil preciso y accesibilidad desde el principio.',
+          cardThreeIndex: '03 / CONFIANZA', cardThreeTitle: 'Seguridad donde importa', cardThreeBody: 'Formularios protegidos, alojamiento fiable y seguridad sensata, sin jerga.',
+          cardFourIndex: '04 / COLABORACIÓN DIRECTA', cardFourTitle: 'Un solo contacto. De principio a fin.', cardFourBody: 'Sin capas comerciales ni traspasos confusos. La persona que escucha tus objetivos diseña, desarrolla, publica y mantiene la web.',
+          veteranKicker: 'Estudio propiedad de un veterano', veteranTitle: 'El servicio marcó nuestro estándar.', veteranBody: 'Chosen Man Studio pertenece a un veterano. Esa experiencia define nuestra forma de trabajar: comunicación clara, responsabilidad personal y determinación para terminar bien el trabajo. Nos enorgullece apoyar a otros veteranos y negocios de veteranos a ambos lados del Atlántico.',
+          veteranNoteA: 'Propiedad de un veterano', veteranNoteB: 'Comunidad del Reino Unido y EE. UU.', veteranNoteC: 'Apoyando a quienes sirvieron',
+          contactKicker: 'Línea directa', contactTitle: '¿Un proyecto que merece la pena?<br><span>Hablemos.</span>', contactBody: 'Cuéntanos qué necesitas, qué te está frenando y cómo sería un buen resultado. Recibirás una respuesta meditada, no una secuencia automatizada.',
+          footerMeta: '© 2026 · Bien hecho en el Norte<br>Servicio internacional'
+        },
+        yk: {
+          pageTitle: 'Chosen Man Studio — Websites Made Proper',
+          navCapabilities: 'What we do', navContact: 'Have a word', availability: 'Booking Q3/Q4', headerCta: 'Have a word',
+          heroKicker: 'Independent web studio · made in the North', heroTitle: 'Websites made proper.<br><span>Built to earn their keep.</span>',
+          heroLede: 'Bespoke web design and development for trades, local firms, and growing businesses. Show your work. Earn trust. Get better enquiries.',
+          heroCta: 'Let’s get it built', heroDirect: 'No daft carry-on.<br><b>Made proper.</b>',
+          capabilitiesKicker: 'What we do', capabilitiesTitle: 'Looks the part.<br>Works for a living.',
+          capabilitiesIntro: 'Strategy, design, build, and launch stay with one person—from the first brew to the finished website.',
+          cardOneIndex: '01 / PROPER WEBSITES', cardOneTitle: 'Your best work, shown proper.', cardOneBody: 'Custom websites that look the part, show what you do, and make it dead easy for customers to get in touch.',
+          cardOneSpecAHead: 'Original', cardOneSpecABody: 'web design', cardOneSpecBHead: 'Complete', cardOneSpecBBody: 'build',
+          cardTwoIndex: '02 / QUICK', cardTwoTitle: 'Fast on every screen', cardTwoBody: 'Lean builds, tidy mobile layouts, and accessibility sorted from the start.',
+          cardThreeIndex: '03 / SOUND', cardThreeTitle: 'Secure where it counts', cardThreeBody: 'Protected forms, dependable hosting, and sensible security without all the waffle.',
+          cardFourIndex: '04 / STRAIGHT DEALING', cardFourTitle: 'One person to deal with. Start to finish.', cardFourBody: 'No sales patter and no confusing hand-offs. The person hearing you out is the person designing, building, launching, and supporting the site.',
+          veteranKicker: 'Veteran-owned studio', veteranTitle: 'Service set the standard.', veteranBody: 'Chosen Man Studio is veteran-owned. We say what we mean, take responsibility, and finish the job properly. We’re proud to back fellow veterans and veteran-owned businesses on both sides of the Atlantic.',
+          veteranNoteA: 'Veteran-owned', veteranNoteB: 'UK & US community', veteranNoteC: 'Backing those who served',
+          contactKicker: 'Have a word', contactTitle: 'Got work needs doing?<br><span>Let’s talk it through.</span>', contactBody: 'Tell us what needs sorting, what’s getting in the way, and what a good result looks like. You’ll get a proper reply—not an automated sequence.',
+          footerMeta: '© 2026 · Made proper in the North<br>Sent out worldwide'
+        }
+      };
+      const setLanguage = (language, persist = true) => {
+        const selected = translations[language] ? language : 'en';
+        const copy = translations[selected];
+        root.querySelectorAll('[data-i18n]').forEach((element) => {
+          const value = copy[element.dataset.i18n];
+          if (value) element.textContent = value;
+        });
+        root.querySelectorAll('[data-i18n-html]').forEach((element) => {
+          const value = copy[element.dataset.i18nHtml];
+          if (value) element.innerHTML = value;
+        });
+        root.querySelectorAll('[data-language]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.language === selected)));
+        document.documentElement.lang = selected === 'es' ? 'es' : 'en-GB';
+        document.title = copy.pageTitle;
+        if (persist) {
+          try { localStorage.setItem('cms-language', selected); } catch (_) {}
+        }
+      };
       const views = {
         build: `<span class="comment">// chosen-man.studio / project brief</span>\n\n<span class="key">const</span> website = {\n  firstImpression: <span class="value">"credible"</span>,\n  showcase: <span class="value">"real work"</span>,\n  enquiries: <span class="value">"simple"</span>,\n  mobile: <span class="value">"fast"</span>\n};\n\n<span class="key">await</span> studio.designWithPurpose();\n<span class="key">await</span> studio.buildItProperly();\n\n<span class="comment">// status: ready for launch</span>`,
         audit: `<span class="comment">[FIELD AUDIT / 14:32:08]</span>\n\n<span class="key">✓</span> semantic structure       <span class="value">passed</span>\n<span class="key">✓</span> keyboard navigation      <span class="value">passed</span>\n<span class="key">✓</span> render path              <span class="value">lean</span>\n<span class="key">✓</span> third-party weight       <span class="value">controlled</span>\n<span class="key">✓</span> ownership handoff        <span class="value">documented</span>\n\n<span class="comment">No template debt detected.\nNo agency layers present.</span>\n\n<span class="key">RESULT</span>  <span class="value">FIT FOR PURPOSE</span>`
@@ -221,6 +336,19 @@
         root.querySelectorAll('[data-code-tab]').forEach((item) => item.setAttribute('aria-pressed', String(item === tab)));
         output.innerHTML = views[tab.dataset.codeTab];
       }));
+      root.querySelectorAll('[data-language]').forEach((button) => button.addEventListener('click', () => setLanguage(button.dataset.language)));
+      let savedLanguage = 'en';
+      try { savedLanguage = localStorage.getItem('cms-language') || 'en'; } catch (_) {}
+      setLanguage(savedLanguage, false);
+      const eggTrigger = root.querySelector('#cms-egg-trigger');
+      const easterEgg = root.querySelector('#cms-easter-egg');
+      eggTrigger.addEventListener('click', () => {
+        const isOpen = eggTrigger.getAttribute('aria-expanded') === 'true';
+        eggTrigger.setAttribute('aria-expanded', String(!isOpen));
+        easterEgg.setAttribute('aria-hidden', String(isOpen));
+        easterEgg.inert = isOpen;
+        easterEgg.classList.toggle('is-open', !isOpen);
+      });
       root.querySelectorAll('a[href^="#cms-tactical-"]').forEach((link) => link.addEventListener('click', (event) => {
         const target = root.querySelector(link.getAttribute('href'));
         if (!target) return;
