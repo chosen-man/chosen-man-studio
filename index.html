@@ -1,12 +1,91 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Chosen Man Studio — bespoke web design and development for contractors, local businesses, and growing companies. Direct access. Zero agency bloat.">
+  <meta name="description" content="Veteran-owned web design, custom app development, and security consulting in Westminster, MD, serving Carroll County and Northern and Western Maryland.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Chosen Man Studio">
+  <meta name="geo.region" content="US-MD">
+  <meta name="geo.placename" content="Westminster">
   <meta name="theme-color" content="#0B110E">
-  <title>Chosen Man Studio - Web Development</title>
-  <link rel="icon" type="image/png" href="assets/chosen-man-mark.png">
+  <title>Web Design &amp; App Development Westminster MD | Chosen Man</title>
+  <link rel="canonical" href="https://chosenman.studio/">
+  <link rel="icon" type="image/png" href="assets/chosen-man-mark-128.png">
+  <link rel="apple-touch-icon" href="assets/chosen-man-mark.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chosenman.studio/">
+  <meta property="og:site_name" content="Chosen Man Studio">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Web Design &amp; App Development in Westminster, MD">
+  <meta property="og:description" content="Bespoke websites, custom apps, and practical security consulting for businesses across Carroll County, Northern Maryland, and Western Maryland.">
+  <meta property="og:image" content="https://chosenman.studio/assets/chosen-man-social.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Chosen Man Studio — web design and app development in Westminster, Maryland">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Web Design &amp; App Development in Westminster, MD">
+  <meta name="twitter:description" content="Bespoke websites, custom apps, and practical security consulting for Maryland businesses.">
+  <meta name="twitter:image" content="https://chosenman.studio/assets/chosen-man-social.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://chosenman.studio/#website",
+        "url": "https://chosenman.studio/",
+        "name": "Chosen Man Studio",
+        "alternateName": "Chosen Man",
+        "publisher": { "@id": "https://chosenman.studio/#business" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://chosenman.studio/#business",
+        "name": "Chosen Man Studio",
+        "url": "https://chosenman.studio/",
+        "logo": "https://chosenman.studio/assets/chosen-man-mark.png",
+        "image": "https://chosenman.studio/assets/chosen-man-social.png",
+        "email": "hello@chosenman.studio",
+        "description": "Veteran-owned studio providing bespoke web design, custom app development, frontend development, and practical security consulting from Westminster, Maryland.",
+        "slogan": "Skilled hands. Precise execution.",
+        "foundingDate": "2026",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Westminster",
+          "addressRegion": "MD",
+          "addressCountry": "US"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Westminster, Maryland" },
+          { "@type": "AdministrativeArea", "name": "Carroll County, Maryland" },
+          { "@type": "AdministrativeArea", "name": "Northern Maryland" },
+          { "@type": "AdministrativeArea", "name": "Western Maryland" },
+          { "@type": "Country", "name": "United States" }
+        ],
+        "knowsAbout": [
+          "Web design",
+          "Website development",
+          "Custom app development",
+          "Frontend engineering",
+          "Website performance",
+          "Cybersecurity consulting"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Digital services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bespoke web design and development", "areaServed": "Maryland" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom app development", "areaServed": "United States" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Security consulting", "areaServed": "United States" } }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
@@ -75,6 +154,8 @@
     #cms-tactical-canvas .cms-main-cta:hover { transform: translateY(-2px); background: #d2b476; }
     #cms-tactical-canvas .cms-direct { color: var(--cms-muted); font: 400 9px "JetBrains Mono", monospace; line-height: 1.6; letter-spacing: .05em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-direct b { color: var(--cms-primary); font-weight: 500; }
+    #cms-tactical-canvas .cms-service-area { display: flex; align-items: center; gap: 10px; margin: 22px 0 0; color: #78877f; font: 400 8px/1.6 "JetBrains Mono", monospace; letter-spacing: .06em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-service-area::before { content: ""; width: 5px; height: 5px; flex: 0 0 auto; background: var(--cms-brass); transform: rotate(45deg); }
     #cms-tactical-canvas .cms-terminal { overflow: hidden; border: 1px solid var(--cms-border); background: rgba(19,30,24,.92); box-shadow: 0 32px 90px rgba(0,0,0,.28); backdrop-filter: blur(12px); }
     #cms-tactical-canvas .cms-terminal-bar { height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 14px; border-bottom: 1px solid var(--cms-border); background: rgba(255,255,255,.018); }
     #cms-tactical-canvas .cms-terminal-dots { display: flex; gap: 5px; }
@@ -129,7 +210,7 @@
     #cms-tactical-canvas .cms-service-mark::before { content: ""; position: absolute; top: 47px; left: 24px; right: 24px; height: 1px; background: var(--cms-border); }
     #cms-tactical-canvas .cms-service-mark-top { display: flex; justify-content: space-between; color: var(--cms-brass); font: 500 8px "JetBrains Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-service-v { color: var(--cms-primary); font: 600 29px/1 Inter, sans-serif; letter-spacing: .025em; }
-    #cms-tactical-canvas .cms-service-v span { display: block; margin-top: 5px; color: var(--cms-brass); font: 500 9px/1.5 "JetBrains Mono", monospace; letter-spacing: .18em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-service-v span { display: block; margin-top: 5px; color: var(--cms-brass); font: inherit; letter-spacing: inherit; }
     #cms-tactical-canvas .cms-service-branches { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; color: var(--cms-muted); font: 500 7px/1.35 "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-service-branches span { position: relative; padding-left: 9px; }
     #cms-tactical-canvas .cms-service-branches span::before { content: ""; position: absolute; left: 0; top: .45em; width: 3px; height: 3px; background: var(--cms-brass); transform: rotate(45deg); }
@@ -197,7 +278,7 @@
   <header class="cms-header">
     <div class="cms-header-inner cms-wrap">
       <a class="cms-logo" href="#cms-tactical-top" aria-label="Chosen Man Studio home">
-        <span class="cms-logo-mark" aria-hidden="true"><img src="assets/chosen-man-mark.png" alt=""></span>
+        <span class="cms-logo-mark" aria-hidden="true"><img src="assets/chosen-man-mark-128.png" alt="" width="40" height="40"></span>
         <span><strong>Chosen Man</strong><small>Studio</small></span>
       </a>
       <nav class="cms-nav" aria-label="Primary navigation"><a href="#cms-tactical-work" data-i18n="navCapabilities">Capabilities</a><a href="#cms-tactical-contact" data-i18n="navContact">Contact</a></nav>
@@ -208,10 +289,11 @@
   <main class="cms-noise" id="cms-tactical-top">
     <section class="cms-hero cms-wrap">
       <div>
-        <p class="cms-kicker" data-i18n="heroKicker">Independent web studio · Yorkshire spirit</p>
+        <p class="cms-kicker" data-i18n="heroKicker">Web design · App development · Westminster, MD</p>
         <h1 data-i18n-html="heroTitle">Websites built<br><span>to earn their keep.</span></h1>
-        <p class="cms-lede" data-i18n="heroLede">Bespoke web design and development for contractors, local businesses, and growing companies. Show the work. Build trust. Win better enquiries.</p>
+        <p class="cms-lede" data-i18n="heroLede">Bespoke web design, custom app development, and security consulting for contractors, local businesses, and growing companies in Westminster and across Maryland.</p>
         <div class="cms-hero-actions"><a class="cms-main-cta" href="#cms-tactical-contact"><span data-i18n="heroCta">Commission the studio</span> <span aria-hidden="true">↗</span></a><p class="cms-direct" data-i18n-html="heroDirect">Straight-talking.<br><b>Properly made.</b></p></div>
+        <p class="cms-service-area" data-i18n="serviceArea">Westminster · Carroll County · Northern &amp; Western Maryland · Nationwide</p>
       </div>
 
       <div class="cms-terminal" aria-label="Interactive development preview">
@@ -237,11 +319,11 @@
     <hr class="cms-rule">
 
     <section class="cms-capabilities cms-wrap" id="cms-tactical-work">
-      <header class="cms-section-head"><div><p class="cms-kicker" data-i18n="capabilitiesKicker">Core capabilities</p><h2 data-i18n-html="capabilitiesTitle">Good-looking sites.<br>Built for business.</h2></div><p data-i18n="capabilitiesIntro">Strategy, design, development, and launch stay in one pair of hands—from the first conversation to the finished website.</p></header>
+      <header class="cms-section-head"><div><p class="cms-kicker" data-i18n="capabilitiesKicker">Core capabilities</p><h2 data-i18n-html="capabilitiesTitle">Websites, apps, and advice.<br>Built for business.</h2></div><p data-i18n="capabilitiesIntro">Web strategy, UX design, application development, security guidance, and launch stay in one pair of hands—from the first conversation to finished delivery.</p></header>
       <div class="cms-bento">
         <article class="cms-bento-card cms-feature"><div class="cms-card-top"><span class="cms-card-index" data-i18n="cardOneIndex">01 / BESPOKE WEBSITES</span><span class="cms-card-icon"><i data-lucide="layout-template" aria-hidden="true"></i></span></div><div><h3 data-i18n="cardOneTitle">Your best work, presented properly.</h3><p data-i18n="cardOneBody">Custom websites that make a strong first impression, show what you do, and give customers a clear reason to get in touch.</p><div class="cms-specs"><span><b data-i18n="cardOneSpecAHead">Original</b><span data-i18n="cardOneSpecABody">web design</span></span><span><b data-i18n="cardOneSpecBHead">Complete</b><span data-i18n="cardOneSpecBBody">development</span></span></div></div></article>
-        <article class="cms-bento-card"><div class="cms-card-top"><span class="cms-card-index" data-i18n="cardTwoIndex">02 / PERFORMANCE</span><span class="cms-card-icon"><i data-lucide="gauge" aria-hidden="true"></i></span></div><h3 data-i18n="cardTwoTitle">Fast on every screen</h3><p data-i18n="cardTwoBody">Lean builds, sharp mobile layouts, and accessibility handled from the start.</p></article>
-        <article class="cms-bento-card"><div class="cms-card-top"><span class="cms-card-index" data-i18n="cardThreeIndex">03 / TRUST</span><span class="cms-card-icon"><i data-lucide="shield-check" aria-hidden="true"></i></span></div><h3 data-i18n="cardThreeTitle">Secure where it matters</h3><p data-i18n="cardThreeBody">Protected contact forms, dependable hosting, and sensible security without the jargon.</p></article>
+        <article class="cms-bento-card"><div class="cms-card-top"><span class="cms-card-index" data-i18n="cardTwoIndex">02 / APP DEVELOPMENT</span><span class="cms-card-icon"><i data-lucide="blocks" aria-hidden="true"></i></span></div><h3 data-i18n="cardTwoTitle">Custom apps built around the work</h3><p data-i18n="cardTwoBody">Focused business tools, customer portals, dashboards, and web applications designed around how your team actually operates.</p></article>
+        <article class="cms-bento-card"><div class="cms-card-top"><span class="cms-card-index" data-i18n="cardThreeIndex">03 / SECURITY CONSULTING</span><span class="cms-card-icon"><i data-lucide="shield-check" aria-hidden="true"></i></span></div><h3 data-i18n="cardThreeTitle">Practical security guidance</h3><p data-i18n="cardThreeBody">Website reviews, sensible risk reduction, protected forms, and dependable hosting advice without scare tactics or jargon.</p></article>
         <article class="cms-bento-card cms-wide"><div class="cms-card-top"><span class="cms-card-index" data-i18n="cardFourIndex">04 / DIRECT COLLABORATION</span><span class="cms-card-icon"><i data-lucide="handshake" aria-hidden="true"></i></span></div><h3 data-i18n="cardFourTitle">One point of contact. Start to finish.</h3><p data-i18n="cardFourBody">No sales layer and no confusing hand-offs. The person discussing your goals is the person designing, building, launching, and supporting the site.</p></article>
       </div>
     </section>
@@ -261,7 +343,7 @@
     </div>
   </section>
 
-  <footer class="cms-footer cms-wrap"><a class="cms-logo" href="#cms-tactical-top"><span class="cms-logo-mark" aria-hidden="true"><img src="assets/chosen-man-mark.png" alt=""></span><span><strong>Chosen Man</strong><small>Studio</small></span></a><div class="cms-footer-links"><a href="#cms-tactical-work" data-i18n="navCapabilities">Capabilities</a><a href="#cms-tactical-contact" data-i18n="navContact">Contact</a></div><span data-i18n-html="footerMeta">© 2026 · Made properly in the North<br>Worldwide delivery</span></footer>
+  <footer class="cms-footer cms-wrap"><a class="cms-logo" href="#cms-tactical-top"><span class="cms-logo-mark" aria-hidden="true"><img src="assets/chosen-man-mark-128.png" alt="" width="40" height="40"></span><span><strong>Chosen Man</strong><small>Studio</small></span></a><div class="cms-footer-links"><a href="#cms-tactical-work" data-i18n="navCapabilities">Capabilities</a><a href="#cms-tactical-contact" data-i18n="navContact">Contact</a></div><span data-i18n-html="footerMeta">© 2026 · Westminster, Maryland<br>Northern &amp; Western MD · Nationwide</span></footer>
 
   <script>
     (() => {
@@ -269,58 +351,61 @@
       const output = root.querySelector('#cms-code-output');
       const translations = {
         en: {
-          pageTitle: 'Chosen Man Studio - Web Development',
+          pageTitle: 'Web Design & App Development Westminster MD | Chosen Man',
           navCapabilities: 'Capabilities', navContact: 'Contact', availability: 'Available for Q3/Q4', headerCta: 'Start a project',
-          heroKicker: 'Independent web studio · Yorkshire spirit', heroTitle: 'Websites built<br><span>to earn their keep.</span>',
-          heroLede: 'Bespoke web design and development for contractors, local businesses, and growing companies. Show the work. Build trust. Win better enquiries.',
+          heroKicker: 'Web design · App development · Westminster, MD', heroTitle: 'Websites built<br><span>to earn their keep.</span>',
+          heroLede: 'Bespoke web design, custom app development, and security consulting for contractors, local businesses, and growing companies in Westminster and across Maryland.',
           heroCta: 'Commission the studio', heroDirect: 'Straight-talking.<br><b>Properly made.</b>',
-          capabilitiesKicker: 'Core capabilities', capabilitiesTitle: 'Good-looking sites.<br>Built for business.',
-          capabilitiesIntro: 'Strategy, design, development, and launch stay in one pair of hands—from the first conversation to the finished website.',
+          serviceArea: 'Westminster · Carroll County · Northern & Western Maryland · Nationwide',
+          capabilitiesKicker: 'Core capabilities', capabilitiesTitle: 'Websites, apps, and advice.<br>Built for business.',
+          capabilitiesIntro: 'Web strategy, UX design, application development, security guidance, and launch stay in one pair of hands—from the first conversation to finished delivery.',
           cardOneIndex: '01 / BESPOKE WEBSITES', cardOneTitle: 'Your best work, presented properly.', cardOneBody: 'Custom websites that make a strong first impression, show what you do, and give customers a clear reason to get in touch.',
           cardOneSpecAHead: 'Original', cardOneSpecABody: 'web design', cardOneSpecBHead: 'Complete', cardOneSpecBBody: 'development',
-          cardTwoIndex: '02 / PERFORMANCE', cardTwoTitle: 'Fast on every screen', cardTwoBody: 'Lean builds, sharp mobile layouts, and accessibility handled from the start.',
-          cardThreeIndex: '03 / TRUST', cardThreeTitle: 'Secure where it matters', cardThreeBody: 'Protected contact forms, dependable hosting, and sensible security without the jargon.',
+          cardTwoIndex: '02 / APP DEVELOPMENT', cardTwoTitle: 'Custom apps built around the work', cardTwoBody: 'Focused business tools, customer portals, dashboards, and web applications designed around how your team actually operates.',
+          cardThreeIndex: '03 / SECURITY CONSULTING', cardThreeTitle: 'Practical security guidance', cardThreeBody: 'Website reviews, sensible risk reduction, protected forms, and dependable hosting advice without scare tactics or jargon.',
           cardFourIndex: '04 / DIRECT COLLABORATION', cardFourTitle: 'One point of contact. Start to finish.', cardFourBody: 'No sales layer and no confusing hand-offs. The person discussing your goals is the person designing, building, launching, and supporting the site.',
           veteranKicker: 'Veteran-owned studio', veteranTitle: 'Service shaped the standard.', veteranBody: 'Chosen Man Studio is veteran-owned. That experience informs how we work: clear communication, personal responsibility, and no fuss when there’s a job to finish. We’re proud to support fellow veterans and veteran-owned businesses on both sides of the Atlantic.',
           veteranNoteA: 'Veteran-owned', veteranNoteB: 'UK & US community', veteranNoteC: 'Supporting those who served',
           contactKicker: 'Direct line', contactTitle: 'Have a project in mind?<br><span>Let’s talk.</span>', contactBody: 'Tell us what needs doing, what’s getting in the way, and what a good result looks like. You’ll get a considered reply—not an automated sequence.',
-          footerMeta: '© 2026 · Made properly in the North<br>Worldwide delivery'
+          footerMeta: '© 2026 · Westminster, Maryland<br>Northern & Western MD · Nationwide'
         },
         es: {
-          pageTitle: 'Chosen Man Studio - Web Development',
+          pageTitle: 'Web Design & App Development Westminster MD | Chosen Man',
           navCapabilities: 'Servicios', navContact: 'Contacto', availability: 'Disponible para T3/T4', headerCta: 'Iniciar un proyecto',
-          heroKicker: 'Estudio web independiente · espíritu de Yorkshire', heroTitle: 'Webs creadas<br><span>para ganarse el jornal.</span>',
-          heroLede: 'Diseño y desarrollo web a medida para contratistas, negocios locales y empresas en crecimiento. Muestra tu trabajo. Genera confianza. Consigue mejores oportunidades.',
+          heroKicker: 'Diseño web · Desarrollo de apps · Westminster, MD', heroTitle: 'Webs creadas<br><span>para ganarse el jornal.</span>',
+          heroLede: 'Diseño web, desarrollo de aplicaciones y consultoría de seguridad para contratistas, negocios locales y empresas de Westminster y todo Maryland.',
           heroCta: 'Encargar un proyecto', heroDirect: 'Trato directo.<br><b>Trabajo bien hecho.</b>',
-          capabilitiesKicker: 'Servicios principales', capabilitiesTitle: 'Webs atractivas.<br>Hechas para el negocio.',
-          capabilitiesIntro: 'Estrategia, diseño, desarrollo y lanzamiento permanecen en las mismas manos, desde la primera conversación hasta la web terminada.',
+          serviceArea: 'Westminster · Condado de Carroll · Norte y oeste de Maryland · Todo EE. UU.',
+          capabilitiesKicker: 'Servicios principales', capabilitiesTitle: 'Webs, apps y asesoría.<br>Hechas para el negocio.',
+          capabilitiesIntro: 'Estrategia web, diseño UX, desarrollo de aplicaciones, seguridad y lanzamiento permanecen en las mismas manos.',
           cardOneIndex: '01 / WEBS A MEDIDA', cardOneTitle: 'Tu mejor trabajo, bien presentado.', cardOneBody: 'Webs personalizadas que causan una gran primera impresión, muestran lo que haces y dan a tus clientes una razón clara para contactar.',
           cardOneSpecAHead: 'Original', cardOneSpecABody: 'diseño web', cardOneSpecBHead: 'Completo', cardOneSpecBBody: 'desarrollo',
-          cardTwoIndex: '02 / RENDIMIENTO', cardTwoTitle: 'Rápida en cada pantalla', cardTwoBody: 'Desarrollo ligero, diseño móvil preciso y accesibilidad desde el principio.',
-          cardThreeIndex: '03 / CONFIANZA', cardThreeTitle: 'Seguridad donde importa', cardThreeBody: 'Formularios protegidos, alojamiento fiable y seguridad sensata, sin jerga.',
+          cardTwoIndex: '02 / DESARROLLO DE APPS', cardTwoTitle: 'Apps creadas para el trabajo real', cardTwoBody: 'Herramientas de negocio, portales de clientes, paneles y aplicaciones web adaptadas a la forma de trabajar de tu equipo.',
+          cardThreeIndex: '03 / CONSULTORÍA DE SEGURIDAD', cardThreeTitle: 'Seguridad práctica', cardThreeBody: 'Revisiones web, reducción sensata del riesgo, formularios protegidos y asesoría de alojamiento sin alarmismo ni jerga.',
           cardFourIndex: '04 / COLABORACIÓN DIRECTA', cardFourTitle: 'Un solo contacto. De principio a fin.', cardFourBody: 'Sin capas comerciales ni traspasos confusos. La persona que escucha tus objetivos diseña, desarrolla, publica y mantiene la web.',
           veteranKicker: 'Estudio propiedad de un veterano', veteranTitle: 'El servicio marcó nuestro estándar.', veteranBody: 'Chosen Man Studio pertenece a un veterano. Esa experiencia define nuestra forma de trabajar: comunicación clara, responsabilidad personal y determinación para terminar bien el trabajo. Nos enorgullece apoyar a otros veteranos y negocios de veteranos a ambos lados del Atlántico.',
           veteranNoteA: 'Propiedad de un veterano', veteranNoteB: 'Comunidad del Reino Unido y EE. UU.', veteranNoteC: 'Apoyando a quienes sirvieron',
-          contactKicker: 'Línea directa', contactTitle: '¿Un proyecto que merece la pena?<br><span>Hablemos.</span>', contactBody: 'Cuéntanos qué necesitas, qué te está frenando y cómo sería un buen resultado. Recibirás una respuesta meditada, no una secuencia automatizada.',
-          footerMeta: '© 2026 · Bien hecho en el Norte<br>Servicio internacional'
+          contactKicker: 'Línea directa', contactTitle: '¿Tienes un proyecto en mente?<br><span>Hablemos.</span>', contactBody: 'Cuéntanos qué necesitas, qué te está frenando y cómo sería un buen resultado. Recibirás una respuesta meditada, no una secuencia automatizada.',
+          footerMeta: '© 2026 · Westminster, Maryland<br>Norte y oeste de MD · Todo EE. UU.'
         },
         yk: {
-          pageTitle: 'Chosen Man Studio - Web Development',
+          pageTitle: 'Web Design & App Development Westminster MD | Chosen Man',
           navCapabilities: 'What we do', navContact: 'Gi’ us a shout', availability: 'Taking bookings Q3/Q4', headerCta: 'Gi’ us a shout',
-          heroKicker: 'Independent web studio · built up North', heroTitle: 'Websites done reyt.<br><span>Built to earn their keep.</span>',
-          heroLede: 'Bespoke web design and development for trades, local firms, and growing businesses. Show folk what tha can do. Build trust. Bring better work through t’door.',
+          heroKicker: 'Web design · App development · Westminster, MD', heroTitle: 'Websites done reyt.<br><span>Built to earn their keep.</span>',
+          heroLede: 'Bespoke websites, custom apps, and security advice for trades, local firms, and growing businesses in Westminster and across Maryland. No faff, just work done reyt.',
           heroCta: 'Let’s crack on', heroDirect: 'No faff. No flannel.<br><b>Made proper.</b>',
-          capabilitiesKicker: 'What we’re good at', capabilitiesTitle: 'Looks reyt.<br>Works hard.',
-          capabilitiesIntro: 'Strategy, design, build, and launch stay with one pair of hands—from first brew to site going live. No passing thee round t’houses.',
+          serviceArea: 'Westminster · Carroll County · Northern & Western Maryland · All over',
+          capabilitiesKicker: 'What we’re good at', capabilitiesTitle: 'Websites, apps, and sound advice.<br>Made proper.',
+          capabilitiesIntro: 'Web strategy, design, app development, security advice, and launch stay with one pair of hands. No passing thee round t’houses.',
           cardOneIndex: '01 / PROPER WEBSITES', cardOneTitle: 'Thy best work, shown proper.', cardOneBody: 'A one-off website that looks reyt, shows folk what tha does, and makes it dead easy for ’em to get in touch.',
           cardOneSpecAHead: 'Nowt off t’shelf', cardOneSpecABody: 'web design', cardOneSpecBHead: 'Whole job', cardOneSpecBBody: 'build and launch',
-          cardTwoIndex: '02 / NO HANGING ABOUT', cardTwoTitle: 'Quick on every screen', cardTwoBody: 'Lean builds, tidy mobile layouts, and accessibility sorted from t’start.',
-          cardThreeIndex: '03 / REYT AND SOUND', cardThreeTitle: 'Secure where it counts', cardThreeBody: 'Protected forms, dependable hosting, and sensible security without all t’waffle.',
+          cardTwoIndex: '02 / APP DEVELOPMENT', cardTwoTitle: 'Apps built round how tha works', cardTwoBody: 'Business tools, customer portals, dashboards, and web apps made to fit t’job—not t’other way round.',
+          cardThreeIndex: '03 / SECURITY ADVICE', cardThreeTitle: 'Reyt and secure', cardThreeBody: 'Website reviews, sensible risk reduction, protected forms, and hosting advice without all t’waffle.',
           cardFourIndex: '04 / STRAIGHT DEALING', cardFourTitle: 'One person to deal with. Start to finish.', cardFourBody: 'No sales patter and no being passed from pillar to post. Chap hearing thee out is chap designing, building, launching, and looking after t’site.',
           veteranKicker: 'Veteran-owned studio', veteranTitle: 'Service set t’standard.', veteranBody: 'Chosen Man Studio is veteran-owned. We say what we mean, stand by our work, and get t’job finished proper. We’re proud to back fellow veterans and veteran-owned businesses on both sides o’t’Atlantic.',
           veteranNoteA: 'Veteran-owned', veteranNoteB: 'UK & US community', veteranNoteC: 'Backing them that served',
           contactKicker: 'Gi’ us a shout', contactTitle: 'Got summat needs doing?<br><span>Let’s have a word.</span>', contactBody: 'Tell us what wants sorting, what’s getting in t’way, and what a good result looks like. Tha’ll get a proper reply—not some automated carry-on.',
-          footerMeta: '© 2026 · Made proper up North<br>Sent out all over'
+          footerMeta: '© 2026 · Westminster, Maryland<br>Northern & Western MD · Sent all over'
         }
       };
       const setLanguage = (language, persist = true) => {
@@ -335,7 +420,7 @@
           if (value) element.innerHTML = value;
         });
         root.querySelectorAll('[data-language]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.language === selected)));
-        document.documentElement.lang = selected === 'es' ? 'es' : 'en-GB';
+        document.documentElement.lang = selected === 'es' ? 'es' : selected === 'yk' ? 'en-GB' : 'en-US';
         document.title = copy.pageTitle;
         if (persist) {
           try { localStorage.setItem('cms-language', selected); } catch (_) {}
