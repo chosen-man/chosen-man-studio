@@ -47,7 +47,7 @@
         "@id": "https://chosenman.studio/#business",
         "name": "Chosen Man Studio",
         "url": "https://chosenman.studio/",
-        "logo": "https://chosenman.studio/assets/chosen-man-mark.png",
+        "logo": "https://chosenman.studio/assets/brand/chosen-man-emblem-on-light.png",
         "image": "https://chosenman.studio/assets/chosen-man-social.png",
         "email": "hello@chosenman.studio",
         "description": "Veteran-owned studio providing bespoke web design, custom app development, frontend development, and practical security consulting from Westminster, Maryland.",
@@ -127,11 +127,8 @@
     #cms-tactical-canvas .cms-noise::after { content: ""; position: absolute; z-index: -1; width: 520px; height: 520px; top: 40px; right: -180px; border-radius: 50%; background: rgba(37,60,46,.44); filter: blur(120px); }
     #cms-tactical-canvas .cms-header { position: sticky; top: 0; z-index: 20; background: rgba(11,17,14,.82); border-bottom: 1px solid var(--cms-border); backdrop-filter: blur(18px); }
     #cms-tactical-canvas .cms-header-inner { min-height: 72px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; }
-    #cms-tactical-canvas .cms-logo { display: flex; align-items: center; gap: 11px; width: fit-content; }
-    #cms-tactical-canvas .cms-logo-mark { width: 44px; height: 44px; display: grid; place-items: center; flex: 0 0 auto; }
-    #cms-tactical-canvas .cms-logo-mark img { display: block; width: 100%; height: 100%; object-fit: contain; }
-    #cms-tactical-canvas .cms-logo strong { display: block; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; }
-    #cms-tactical-canvas .cms-logo small { display: block; margin-top: 3px; color: var(--cms-muted); font: 400 7px "JetBrains Mono", monospace; letter-spacing: .18em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-logo { display: flex; align-items: center; width: fit-content; }
+    #cms-tactical-canvas .cms-logo-lockup { display: block; width: 186px; height: auto; }
     #cms-tactical-canvas .cms-nav { display: flex; gap: 28px; color: var(--cms-muted); font: 500 9px "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-nav a:hover { color: var(--cms-brass); }
     #cms-tactical-canvas .cms-header-actions { justify-self: end; display: flex; align-items: center; gap: 10px; }
@@ -255,7 +252,7 @@
     @media (max-width: 560px) {
       #cms-tactical-canvas .cms-wrap { width: calc(100% - 28px); }
       #cms-tactical-canvas .cms-header-inner { min-height: 66px; }
-      #cms-tactical-canvas .cms-logo-mark { width: 38px; height: 38px; }
+      #cms-tactical-canvas .cms-logo-lockup { width: 148px; }
       #cms-tactical-canvas .cms-status { display: none; }
       #cms-tactical-canvas .cms-header-cta { padding: 9px 10px; }
       #cms-tactical-canvas .cms-hero { padding-block: 74px 64px; }
@@ -287,8 +284,7 @@
   <header class="cms-header">
     <div class="cms-header-inner cms-wrap">
       <a class="cms-logo" href="#cms-tactical-top" aria-label="Chosen Man Studio home">
-        <span class="cms-logo-mark" aria-hidden="true"><img src="assets/chosen-man-mark-128.png" alt="" width="44" height="44"></span>
-        <span><strong>Chosen Man</strong><small>Studio</small></span>
+        <img class="cms-logo-lockup" src="assets/brand/chosen-man-primary-on-dark.png" alt="Chosen Man Studio" width="1800" height="480">
       </a>
       <nav class="cms-nav" aria-label="Primary navigation"><a href="#cms-tactical-work" data-i18n="navCapabilities">Capabilities</a><a href="#cms-tactical-contact" data-i18n="navContact">Contact</a></nav>
       <div class="cms-header-actions"><div class="cms-language" role="group" aria-label="Language"><button type="button" data-language="en" aria-pressed="true">EN</button><button type="button" data-language="es" aria-pressed="false">ES</button><button type="button" data-language="yk" aria-pressed="false">YK</button></div><span class="cms-status"><i></i><span data-i18n="availability">Available for Q3/Q4</span></span><a class="cms-header-cta" href="#cms-tactical-contact"><span data-i18n="headerCta">Start a project</span> <span aria-hidden="true">↗</span></a></div>
@@ -352,7 +348,7 @@
     </div>
   </section>
 
-  <footer class="cms-footer cms-wrap"><a class="cms-logo" href="#cms-tactical-top"><span class="cms-logo-mark" aria-hidden="true"><img src="assets/chosen-man-mark-128.png" alt="" width="44" height="44"></span><span><strong>Chosen Man</strong><small>Studio</small></span></a><div class="cms-footer-links"><a href="#cms-tactical-work" data-i18n="navCapabilities">Capabilities</a><a href="#cms-tactical-contact" data-i18n="navContact">Contact</a></div><div class="cms-footer-place"><span data-i18n-html="footerMeta">© 2026 · Westminster, Maryland<br>Northern &amp; Western MD · Nationwide</span></div></footer>
+  <footer class="cms-footer cms-wrap"><a class="cms-logo" href="#cms-tactical-top" aria-label="Chosen Man Studio home"><img class="cms-logo-lockup" src="assets/brand/chosen-man-primary-on-dark.png" alt="Chosen Man Studio" width="1800" height="480"></a><div class="cms-footer-links"><a href="#cms-tactical-work" data-i18n="navCapabilities">Capabilities</a><a href="#cms-tactical-contact" data-i18n="navContact">Contact</a></div><div class="cms-footer-place"><span data-i18n-html="footerMeta">© 2026 · Westminster, Maryland<br>Northern &amp; Western MD · Nationwide</span></div></footer>
 
   <script>
     (() => {
