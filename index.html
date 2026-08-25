@@ -217,10 +217,8 @@
     #cms-tactical-canvas .cms-service-mark::after { content: none; }
     #cms-tactical-canvas .cms-service-mark > * { position: relative; z-index: 1; }
     #cms-tactical-canvas .cms-service-mark-top { display: flex; justify-content: space-between; color: var(--cms-brass); font: 500 8px "JetBrains Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
-    #cms-tactical-canvas .cms-service-v { position: relative; color: var(--cms-primary); font: 600 29px/1 Inter, sans-serif; letter-spacing: .025em; }
-    #cms-tactical-canvas .cms-service-v > .cms-service-veterans { display: block; margin-top: 5px; padding-right: 30px; color: var(--cms-brass); font: inherit; letter-spacing: inherit; }
-    #cms-tactical-canvas .cms-us-shield { position: absolute; width: 24px; height: 29px; right: 1px; bottom: -1px; display: block; opacity: .88; filter: saturate(.72); }
-    #cms-tactical-canvas .cms-us-shield svg { display: block; width: 100%; height: 100%; }
+    #cms-tactical-canvas .cms-service-v { color: var(--cms-primary); font: 600 29px/1 Inter, sans-serif; letter-spacing: .025em; }
+    #cms-tactical-canvas .cms-service-v span { display: block; margin-top: 5px; color: var(--cms-brass); font: inherit; letter-spacing: inherit; }
     #cms-tactical-canvas .cms-service-branches { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; color: var(--cms-muted); font: 500 7px/1.35 "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-service-branches span { position: relative; padding-left: 9px; }
     #cms-tactical-canvas .cms-service-branches span::before { content: ""; position: absolute; left: 0; top: .45em; width: 3px; height: 3px; background: var(--cms-brass); }
@@ -240,10 +238,7 @@
     #cms-tactical-canvas .cms-email:hover { transform: translateY(-2px); background: #d2b476; }
     #cms-tactical-canvas .cms-footer { min-height: 110px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 28px; color: var(--cms-muted); font: 400 8px/1.6 "JetBrains Mono", monospace; letter-spacing: .07em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-footer-links { display: flex; gap: 22px; }
-    #cms-tactical-canvas .cms-footer-place { justify-self: end; display: flex; align-items: center; gap: 11px; text-align: right; }
-    #cms-tactical-canvas .cms-md-flag { width: 27px; height: 18px; flex: 0 0 auto; display: block; border: 1px solid rgba(241,245,249,.22); opacity: .72; transition: opacity .2s ease, border-color .2s ease; }
-    #cms-tactical-canvas .cms-footer-place:hover .cms-md-flag { opacity: 1; border-color: rgba(197,160,89,.55); }
-    #cms-tactical-canvas .cms-md-flag svg { display: block; width: 100%; height: 100%; }
+    #cms-tactical-canvas .cms-footer-place { justify-self: end; text-align: right; }
     @media (max-width: 860px) {
       #cms-tactical-canvas .cms-header-inner { grid-template-columns: 1fr auto; }
       #cms-tactical-canvas .cms-nav { display: none; }
@@ -279,8 +274,6 @@
       #cms-tactical-canvas .cms-easter-copy { align-items: flex-start; flex-direction: column; }
       #cms-tactical-canvas .cms-footer { grid-template-columns: 1fr 1fr; padding-block: 30px; }
       #cms-tactical-canvas .cms-footer-links { display: none; }
-      #cms-tactical-canvas .cms-footer-place { align-items: flex-start; gap: 8px; }
-      #cms-tactical-canvas .cms-md-flag { width: 24px; height: 16px; margin-top: 1px; }
     }
     @media (max-width: 410px) {
       #cms-tactical-canvas .cms-header-cta { display: none; }
@@ -347,7 +340,7 @@
 
   <section class="cms-service-standard" aria-labelledby="cms-service-title">
     <div class="cms-service-inner cms-wrap">
-      <div class="cms-service-mark" aria-hidden="true"><div class="cms-service-mark-top"><span>CMS / 01</span><span>EST. 2026</span></div><div class="cms-service-v">SUPPORTING<span class="cms-service-veterans">VETERANS</span><span class="cms-us-shield"><svg viewBox="0 0 30 36" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="cms-us-shield-clip"><path d="M2 2h26v14c0 8.8-5.8 14.4-13 18C7.8 30.4 2 24.8 2 16Z"/></clipPath></defs><g clip-path="url(#cms-us-shield-clip)"><rect width="30" height="36" fill="#f3f0e7"/><g fill="#b22234"><rect width="30" height="3"/><rect y="6" width="30" height="3"/><rect y="12" width="30" height="3"/><rect y="18" width="30" height="3"/><rect y="24" width="30" height="3"/><rect y="30" width="30" height="3"/></g><rect width="14" height="15" fill="#3c3b6e"/><g fill="#fff"><circle cx="3" cy="3" r=".8"/><circle cx="7" cy="3" r=".8"/><circle cx="11" cy="3" r=".8"/><circle cx="5" cy="7" r=".8"/><circle cx="9" cy="7" r=".8"/><circle cx="3" cy="11" r=".8"/><circle cx="7" cy="11" r=".8"/><circle cx="11" cy="11" r=".8"/></g></g><path d="M2 2h26v14c0 8.8-5.8 14.4-13 18C7.8 30.4 2 24.8 2 16Z" fill="none" stroke="#c5a059" stroke-width="1.2"/></svg></span></div><div class="cms-service-branches"><span>Army</span><span>Navy</span><span>Marine Corps</span><span>Air Force</span><span>Space Force</span><span>Coast Guard</span></div></div>
+      <div class="cms-service-mark" aria-hidden="true"><div class="cms-service-mark-top"><span>CMS / 01</span><span>EST. 2026</span></div><div class="cms-service-v">SUPPORTING<span>VETERANS</span></div><div class="cms-service-branches"><span>Army</span><span>Navy</span><span>Marine Corps</span><span>Air Force</span><span>Space Force</span><span>Coast Guard</span></div></div>
       <div class="cms-service-copy"><p class="cms-kicker" data-i18n="veteranKicker">Veteran-owned studio</p><h2 id="cms-service-title" data-i18n="veteranTitle">Service shaped the standard.</h2><p data-i18n="veteranBody">Chosen Man Studio is veteran-owned. That experience informs how we work: clear communication, personal responsibility, and no fuss when there’s a job to finish. We’re proud to support fellow veterans and veteran-owned businesses on both sides of the Atlantic.</p><div class="cms-service-notes"><span data-i18n="veteranNoteA">Veteran-owned</span><span data-i18n="veteranNoteB">UK &amp; US community</span><span data-i18n="veteranNoteC">Supporting those who served</span></div></div>
     </div>
   </section>
@@ -359,7 +352,7 @@
     </div>
   </section>
 
-  <footer class="cms-footer cms-wrap"><a class="cms-logo" href="#cms-tactical-top"><span class="cms-logo-mark" aria-hidden="true"><img src="assets/chosen-man-mark-128.png" alt="" width="44" height="44"></span><span><strong>Chosen Man</strong><small>Studio</small></span></a><div class="cms-footer-links"><a href="#cms-tactical-work" data-i18n="navCapabilities">Capabilities</a><a href="#cms-tactical-contact" data-i18n="navContact">Contact</a></div><div class="cms-footer-place"><span class="cms-md-flag" aria-hidden="true"><svg viewBox="0 0 27 18" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="cms-calvert" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(18)"><rect width="3" height="6" fill="#c5a059"/><rect x="3" width="3" height="6" fill="#111713"/></pattern></defs><path d="M0 0h13.5v9H0zM13.5 9H27v9H13.5z" fill="url(#cms-calvert)"/><path d="M13.5 0H27v9H13.5zM0 9h13.5v9H0z" fill="#873f39"/><path d="M20.25 1.35v6.3M17.1 4.5h6.3M6.75 10.35v6.3M3.6 13.5h6.3" stroke="#eee7d8" stroke-width="1.45" stroke-linecap="square"/></svg></span><span data-i18n-html="footerMeta">© 2026 · Westminster, Maryland<br>Northern &amp; Western MD · Nationwide</span></div></footer>
+  <footer class="cms-footer cms-wrap"><a class="cms-logo" href="#cms-tactical-top"><span class="cms-logo-mark" aria-hidden="true"><img src="assets/chosen-man-mark-128.png" alt="" width="44" height="44"></span><span><strong>Chosen Man</strong><small>Studio</small></span></a><div class="cms-footer-links"><a href="#cms-tactical-work" data-i18n="navCapabilities">Capabilities</a><a href="#cms-tactical-contact" data-i18n="navContact">Contact</a></div><div class="cms-footer-place"><span data-i18n-html="footerMeta">© 2026 · Westminster, Maryland<br>Northern &amp; Western MD · Nationwide</span></div></footer>
 
   <script>
     (() => {
