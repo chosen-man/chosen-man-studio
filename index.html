@@ -143,7 +143,8 @@
     #cms-tactical-canvas .cms-status i { width: 6px; height: 6px; border-radius: 50%; background: #87c69a; box-shadow: 0 0 0 0 rgba(135,198,154,.5), 0 0 10px rgba(135,198,154,.55); animation: cms-status-pulse 2.8s ease-out infinite; }
     @keyframes cms-status-pulse { 0%, 42%, 100% { box-shadow: 0 0 0 0 rgba(135,198,154,.46), 0 0 9px rgba(135,198,154,.5); } 18% { box-shadow: 0 0 0 5px rgba(135,198,154,0), 0 0 14px rgba(135,198,154,.72); } }
     #cms-tactical-canvas .cms-header-cta { display: inline-flex; align-items: center; gap: 8px; padding: 10px 13px; background: var(--cms-primary); color: var(--cms-bg); font: 600 8px "JetBrains Mono", monospace; letter-spacing: .06em; text-transform: uppercase; }
-    #cms-tactical-canvas .cms-hero { display: grid; grid-template-columns: minmax(0,1.08fr) minmax(340px,.92fr); gap: 56px; align-items: center; padding-block: 105px 88px; }
+    #cms-tactical-canvas .cms-hero { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0,1.08fr) minmax(340px,.92fr); gap: 56px; align-items: center; padding-block: 105px 88px; }
+    #cms-tactical-canvas .cms-hero::before { content: ""; position: absolute; z-index: -1; left: 50%; bottom: 0; width: 100vw; height: 140px; transform: translateX(-50%) scaleY(1.55); transform-origin: center bottom; background: linear-gradient(rgba(11,17,14,.18), rgba(11,17,14,.46)), url("assets/chosen-man-social-v4.png") center bottom / max(100%, 1200px) auto no-repeat; background-blend-mode: multiply; filter: saturate(.72) contrast(1.08) brightness(.62); opacity: .42; -webkit-mask-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.56) 30%, #000 72%); mask-image: linear-gradient(to bottom, transparent, rgba(0,0,0,.56) 30%, #000 72%); pointer-events: none; }
     #cms-tactical-canvas .cms-kicker { display: flex; align-items: center; gap: 11px; margin: 0 0 24px; color: var(--cms-brass); font: 500 9px "JetBrains Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-kicker::before { content: ""; width: 31px; height: 1px; flex: 0 0 auto; background: var(--cms-brass); }
     #cms-tactical-canvas .cms-hero h1 { max-width: 740px; margin: 0; font-size: clamp(52px,7.4vw,96px); font-weight: 600; line-height: .9; letter-spacing: -.07em; }
@@ -257,6 +258,7 @@
       #cms-tactical-canvas .cms-wrap { width: calc(100% - 28px); }
       #cms-tactical-canvas .cms-header-inner { min-height: 72px; }
       #cms-tactical-canvas .cms-logo-lockup { width: 166px; }
+      #cms-tactical-canvas .cms-hero::before { top: 470px; bottom: auto; height: 122px; background-position: 24% bottom; background-size: 1100px auto; opacity: .36; }
       #cms-tactical-canvas .cms-status { display: none; }
       #cms-tactical-canvas .cms-header-cta { padding: 9px 10px; }
       #cms-tactical-canvas .cms-hero { padding-block: 74px 64px; }
