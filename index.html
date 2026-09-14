@@ -116,7 +116,7 @@
         "@id": "https://chosenman.studio/#romeos-contracting",
         "name": "Romeo's Contracting",
         "url": "https://romeoscontracting.com/",
-        "image": "https://chosenman.studio/assets/work/romeos-contracting.jpg",
+        "image": "https://chosenman.studio/assets/work/romeos-website-preview.jpg",
         "creator": { "@id": "https://chosenman.studio/#business" },
         "description": "A portfolio-first website for a licensed remodeling contractor, built around real project photography, clear services, local search visibility, and direct estimate inquiries."
       }
@@ -126,7 +126,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 <div id="cms-tactical-canvas">
@@ -143,7 +143,7 @@
       --cms-green: #253c2e;
       --cms-border: rgba(255, 255, 255, 0.07);
       width: 100%;
-      overflow: hidden;
+      overflow-x: clip;
       background: var(--cms-bg);
       color: var(--cms-primary);
       font-family: Inter, sans-serif;
@@ -195,14 +195,6 @@
     #cms-tactical-canvas .cms-terminal-bar { height: 44px; display: flex; align-items: center; justify-content: space-between; padding: 0 14px; border-bottom: 1px solid var(--cms-border); background: rgba(255,255,255,.018); }
     #cms-tactical-canvas .cms-terminal-dots { display: flex; gap: 5px; }
     #cms-tactical-canvas .cms-terminal-dots i { width: 5px; height: 5px; background: rgba(197,160,89,.34); }
-    #cms-tactical-canvas .cms-terminal-tabs { display: flex; align-self: stretch; }
-    #cms-tactical-canvas .cms-terminal-tab { position: relative; border: 0; border-left: 1px solid var(--cms-border); border-bottom: 1px solid transparent; padding: 0 12px; background: transparent; color: var(--cms-muted); cursor: pointer; font: 500 8px "JetBrains Mono", monospace; letter-spacing: .07em; transition: color .18s ease, background-color .18s ease, border-color .18s ease; }
-    #cms-tactical-canvas .cms-terminal-tab:hover { color: var(--cms-primary); background: rgba(255,255,255,.025); }
-    #cms-tactical-canvas .cms-terminal-tab[aria-pressed="true"] { color: var(--cms-brass); border-bottom-color: var(--cms-brass); background: rgba(197,160,89,.07); }
-    #cms-tactical-canvas .cms-code { min-height: 330px; max-width: 100%; margin: 0; padding: 26px; overflow-x: auto; overflow-y: hidden; color: #b9c5bd; font: 400 11px/1.85 "JetBrains Mono", monospace; letter-spacing: .01em; white-space: pre; -webkit-overflow-scrolling: touch; -webkit-font-smoothing: antialiased; scrollbar-color: rgba(197,160,89,.45) transparent; scrollbar-width: thin; }
-    #cms-tactical-canvas .cms-code .key { color: var(--cms-brass); }
-    #cms-tactical-canvas .cms-code .value { color: #dce9df; }
-    #cms-tactical-canvas .cms-code .comment { color: #617269; }
     #cms-tactical-canvas .cms-terminal-foot { display: flex; justify-content: space-between; padding: 12px 14px; border-top: 1px solid var(--cms-border); color: var(--cms-muted); font: 400 8px "JetBrains Mono", monospace; letter-spacing: .06em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-terminal-foot b { color: #7fb38f; font-weight: 500; }
     #cms-tactical-canvas .cms-egg-trigger { border: 0; padding: 0; background: transparent; color: inherit; cursor: pointer; font: inherit; letter-spacing: inherit; text-transform: inherit; transition: color .18s ease; }
@@ -220,8 +212,8 @@
     #cms-tactical-canvas .cms-capabilities { padding-block: 86px 105px; }
     #cms-tactical-canvas .cms-section-head { display: grid; grid-template-columns: 1fr .55fr; gap: 40px; align-items: end; margin-bottom: 40px; }
     #cms-tactical-canvas .cms-section-head h2 { margin: 0; font-size: clamp(38px,5vw,60px); font-weight: 600; line-height: .95; letter-spacing: -.055em; }
-    #cms-tactical-canvas .cms-section-head p { margin: 0; color: var(--cms-muted); font-size: 14px; line-height: 1.65; }
-    #cms-tactical-canvas .cms-bento { display: grid; grid-template-columns: 1.15fr .85fr .85fr; grid-template-rows: 282px 250px; gap: 12px; }
+    #cms-tactical-canvas .cms-section-head > p { margin: 0; color: var(--cms-muted); font-size: 14px; line-height: 1.65; }
+    #cms-tactical-canvas .cms-bento { display: grid; grid-template-columns: 1.15fr .85fr .85fr; grid-template-rows: minmax(282px,auto) minmax(220px,auto); gap: 12px; }
     #cms-tactical-canvas .cms-bento-card { position: relative; overflow: hidden; padding: 26px; border: 1px solid var(--cms-border); background: var(--cms-panel); transition: transform .2s ease, border-color .2s ease, background-color .2s ease; }
     #cms-tactical-canvas .cms-bento-card:hover { transform: translateY(-2px); border-color: rgba(197,160,89,.38); background-color: #15221b; }
     #cms-tactical-canvas .cms-bento-card::before,
@@ -239,12 +231,13 @@
     #cms-tactical-canvas .cms-route-map .cms-map-x { fill: none; stroke: var(--cms-brass); stroke-width: 3; stroke-linecap: square; }
     #cms-tactical-canvas .cms-card-collaboration h3,
     #cms-tactical-canvas .cms-card-collaboration p { position: relative; z-index: 2; text-shadow: 0 1px 14px var(--cms-panel); }
-    #cms-tactical-canvas .cms-card-top { display: flex; align-items: center; justify-content: space-between; }
-    #cms-tactical-canvas .cms-card-index { color: var(--cms-brass); font: 500 8px "JetBrains Mono", monospace; letter-spacing: .1em; }
+    #cms-tactical-canvas .cms-card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    #cms-tactical-canvas .cms-card-icon { flex-shrink: 0; }
+    #cms-tactical-canvas .cms-card-index { color: var(--cms-brass); font: 500 10px/1.5 "JetBrains Mono", monospace; letter-spacing: .1em; }
     #cms-tactical-canvas .cms-card-icon { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid rgba(197,160,89,.22); color: var(--cms-brass); clip-path: polygon(0 0, 25px 0, 100% 9px, 100% 100%, 9px 100%, 0 25px); background: rgba(11,17,14,.2); }
     #cms-tactical-canvas .cms-card-icon svg { width: 15px; height: 15px; }
     #cms-tactical-canvas .cms-bento-card h3 { max-width: 400px; margin: 34px 0 10px; font-size: 24px; font-weight: 500; letter-spacing: -.035em; }
-    #cms-tactical-canvas .cms-bento-card p { max-width: 460px; margin: 0; color: var(--cms-muted); font-size: 13px; line-height: 1.65; }
+    #cms-tactical-canvas .cms-bento-card p { max-width: 460px; margin: 0; color: var(--cms-muted); font-size: 14px; line-height: 1.65; }
     #cms-tactical-canvas .cms-feature > div:last-child { min-height: 0; display: flex; flex: 1; flex-direction: column; }
     #cms-tactical-canvas .cms-feature h3 { margin-top: 48px; font-size: clamp(30px,4vw,46px); }
     #cms-tactical-canvas .cms-feature .cms-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: auto; background: var(--cms-border); }
@@ -257,19 +250,19 @@
     #cms-tactical-canvas .cms-work-number { align-self: start; padding-top: 5px; color: var(--cms-brass); font: 500 8px "JetBrains Mono", monospace; letter-spacing: .11em; }
     #cms-tactical-canvas .cms-work-media { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--cms-border); background: #090e0b; }
     #cms-tactical-canvas .cms-work-media::after { content: ""; position: absolute; inset: 0; border: 1px solid transparent; box-shadow: inset 0 -70px 80px rgba(5,9,7,.46); pointer-events: none; transition: border-color .2s ease; }
-    #cms-tactical-canvas .cms-work-media img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(.78) contrast(1.03); transition: transform .35s ease, filter .35s ease; }
+    #cms-tactical-canvas .cms-work-media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; filter: saturate(.78) contrast(1.03); transition: transform .35s ease, filter .35s ease; }
     #cms-tactical-canvas .cms-work-item:hover .cms-work-media::after { border-color: rgba(197,160,89,.22); }
     #cms-tactical-canvas .cms-work-item:hover .cms-work-media img { transform: scale(1.018); filter: saturate(.92) contrast(1.04); }
     #cms-tactical-canvas .cms-work-status { position: absolute; z-index: 1; left: 12px; bottom: 11px; padding: 6px 8px; border: 1px solid rgba(255,255,255,.09); background: rgba(11,17,14,.82); color: var(--cms-brass); font: 500 7px "JetBrains Mono", monospace; letter-spacing: .1em; text-transform: uppercase; backdrop-filter: blur(8px); }
     #cms-tactical-canvas .cms-work-copy { min-width: 0; padding-right: 14px; }
-    #cms-tactical-canvas .cms-work-type { display: block; margin-bottom: 13px; color: #7f9186; font: 500 8px "JetBrains Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-work-type { display: block; margin-bottom: 13px; color: #a3b1a9; font: 500 9px "JetBrains Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-work-title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; }
     #cms-tactical-canvas .cms-work-title-row h3 { margin: 0; font-size: clamp(26px,3vw,38px); font-weight: 550; line-height: 1; letter-spacing: -.045em; }
     #cms-tactical-canvas .cms-work-link { flex: 0 0 auto; color: var(--cms-brass); font: 500 8px "JetBrains Mono", monospace; letter-spacing: .08em; text-transform: uppercase; transition: color .2s ease, transform .2s ease; }
     #cms-tactical-canvas .cms-work-link:hover { color: #d7ba7d; transform: translateX(2px); }
     #cms-tactical-canvas .cms-work-copy p { max-width: 620px; margin: 15px 0 17px; color: var(--cms-muted); font-size: 13px; line-height: 1.65; }
     #cms-tactical-canvas .cms-work-tags { display: flex; flex-wrap: wrap; gap: 7px; }
-    #cms-tactical-canvas .cms-work-tags span { padding: 6px 8px; border: 1px solid var(--cms-border); color: #8fa097; font: 500 7px "JetBrains Mono", monospace; letter-spacing: .07em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-work-tags span { padding: 6px 8px; border: 1px solid var(--cms-border); color: #a3b1a9; font: 500 9px "JetBrains Mono", monospace; letter-spacing: .07em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-service-standard { position: relative; border-top: 1px solid var(--cms-border); background: #0e1712; }
     #cms-tactical-canvas .cms-service-inner { min-height: 360px; display: grid; grid-template-columns: .72fr 1.28fr; gap: 76px; align-items: center; }
     #cms-tactical-canvas .cms-service-mark { position: relative; width: min(100%, 270px); min-height: 250px; display: flex; flex-direction: column; justify-content: space-between; padding: 24px; border: 1px solid rgba(197,160,89,.32); background: linear-gradient(145deg, rgba(197,160,89,.07), rgba(19,30,24,.3)); box-shadow: inset 0 0 0 7px #0e1712, inset 0 0 0 8px var(--cms-border); }
@@ -289,13 +282,9 @@
     #cms-tactical-canvas .cms-service-notes span::before { content: ""; width: 4px; height: 4px; background: var(--cms-brass); }
     #cms-tactical-canvas .cms-contact { position: relative; padding-block: 72px; overflow: hidden; background: #17251d; border-block: 1px solid rgba(197,160,89,.24); }
     #cms-tactical-canvas .cms-contact::after { content: none; }
-    #cms-tactical-canvas .cms-contact-inner { position: relative; z-index: 1; min-height: 320px; display: grid; grid-template-columns: minmax(0,1.15fr) minmax(300px,.65fr); gap: 80px; align-items: center; padding: 62px; border: 1px solid rgba(255,255,255,.1); background: rgba(11,17,14,.5); box-shadow: 0 30px 80px rgba(0,0,0,.18); }
+    #cms-tactical-canvas .cms-contact-inner { position: relative; z-index: 1; min-height: 320px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 48px; align-items: center; padding: 48px; border: 1px solid var(--cms-border); background: rgba(11,17,14,.5); box-shadow: 0 30px 80px rgba(0,0,0,.18); }
     #cms-tactical-canvas .cms-contact h2 { max-width: 720px; margin: 14px 0 0; font-size: clamp(44px,6vw,76px); font-weight: 600; line-height: 1.02; letter-spacing: -.052em; }
     #cms-tactical-canvas .cms-contact h2 span { color: var(--cms-brass); }
-    #cms-tactical-canvas .cms-contact-block { width: 100%; padding: 26px; border: 1px solid var(--cms-border); background: rgba(19,30,24,.8); }
-    #cms-tactical-canvas .cms-contact-block p { margin: 0 0 24px; color: #aab7af; font-size: 14px; line-height: 1.7; }
-    #cms-tactical-canvas .cms-email { min-height: 54px; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 0 16px; background: var(--cms-brass); color: var(--cms-bg); font: 600 10px "JetBrains Mono", monospace; letter-spacing: .02em; transition: transform .2s ease, background-color .2s ease; }
-    #cms-tactical-canvas .cms-email:hover { transform: translateY(-2px); background: #d2b476; }
     #cms-tactical-canvas .cms-footer { min-height: 126px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 28px; color: var(--cms-muted); font: 400 8px/1.6 "JetBrains Mono", monospace; letter-spacing: .07em; text-transform: uppercase; }
     #cms-tactical-canvas .cms-footer .cms-logo { opacity: .88; transition: opacity .2s ease; }
     #cms-tactical-canvas .cms-footer .cms-logo:hover { opacity: 1; }
@@ -313,7 +302,6 @@
       #cms-tactical-canvas .cms-work-item { grid-template-columns: 34px minmax(240px,.85fr) minmax(0,1.15fr); gap: 20px; }
       #cms-tactical-canvas .cms-service-inner { grid-template-columns: .55fr 1.45fr; gap: 48px; }
       #cms-tactical-canvas .cms-contact-inner { grid-template-columns: 1fr; gap: 42px; padding: 52px; }
-      #cms-tactical-canvas .cms-contact-block { max-width: 520px; }
     }
     @media (max-width: 560px) {
       #cms-tactical-canvas .cms-wrap { width: calc(100% - 28px); }
@@ -323,7 +311,6 @@
       #cms-tactical-canvas .cms-status { display: none; }
       #cms-tactical-canvas .cms-header-cta { padding: 9px 10px; }
       #cms-tactical-canvas .cms-hero { padding-block: 74px 64px; }
-      #cms-tactical-canvas .cms-code { min-height: 300px; padding: 20px; font-size: 9px; }
       #cms-tactical-canvas .cms-section-head,
       #cms-tactical-canvas .cms-contact-inner { grid-template-columns: 1fr; }
       #cms-tactical-canvas .cms-bento { grid-template-columns: 1fr; }
@@ -353,15 +340,118 @@
       #cms-tactical-canvas * { scroll-behavior: auto !important; transition-duration: .01ms !important; }
       #cms-tactical-canvas .cms-status i { animation: none; }
     }
+
+    /* Interactive project desk. No additional runtime dependencies. */
+    #cms-tactical-canvas [hidden] { display: none !important; }
+    #cms-tactical-canvas :is(a,button,input,select,textarea,summary):focus-visible { outline: 2px solid var(--cms-brass); outline-offset: 5px; }
+    #cms-tactical-canvas [id^="cms-tactical-"] { scroll-margin-top: 110px; }
+    #cms-tactical-canvas .cms-skip { position: fixed; top: 10px; left: 14px; transform: translateY(-200%); z-index: 40; padding: 14px 20px; background: var(--cms-brass); color: var(--cms-bg); }
+    #cms-tactical-canvas .cms-skip:focus { transform: translateY(0); }
+    #cms-tactical-canvas .cms-small-label { color: var(--cms-brass); font: 500 9px/1.6 "JetBrains Mono",monospace; letter-spacing: .08em; text-transform: uppercase; }
+    #cms-tactical-canvas .cms-text-link { display: inline-flex; gap: 14px; align-items: center; min-height: 44px; color: var(--cms-primary); font: 500 10px/1.5 "JetBrains Mono",monospace; }
+    #cms-tactical-canvas .cms-text-link:hover { color: var(--cms-brass); }
+    #cms-tactical-canvas .cms-project-selector { padding: 30px; }
+    #cms-tactical-canvas .cms-project-selector h2 { margin: 0; font-size: 24px; line-height: 1.2; font-weight: 500; letter-spacing: -.04em; }
+    #cms-tactical-canvas .cms-selector-intro { margin: 10px 0 24px; font-size: 12px; line-height: 1.7; color: var(--cms-muted); }
+    #cms-tactical-canvas .cms-project-choices { display: grid; grid-template-columns: 1fr 1fr 1.2fr; border: 1px solid var(--cms-border); }
+    #cms-tactical-canvas .cms-project-choices button { min-height: 46px; padding: 10px 6px; border: 0; border-right: 1px solid var(--cms-border); border-bottom: 2px solid transparent; background: rgba(11,17,14,.4); color: var(--cms-muted); font: 500 10px/1.5 "JetBrains Mono",monospace; cursor: pointer; transition: background .2s,color .2s,border-color .2s; }
+    #cms-tactical-canvas .cms-project-choices button:last-child { border-right: 0; }
+    #cms-tactical-canvas .cms-project-choices button:hover { background: rgba(197,160,89,.06); color: var(--cms-primary); }
+    #cms-tactical-canvas .cms-project-choices button[aria-pressed="true"] { border-bottom-color: var(--cms-brass); background: rgba(197,160,89,.12); color: var(--cms-brass); }
+    #cms-tactical-canvas .cms-project-preview { display: grid; min-height: 330px; padding-top: 26px; }
+    #cms-tactical-canvas .cms-project-panel { position: relative; padding-top: 4px; background-image: radial-gradient(rgba(197,160,89,.12) .65px,transparent .65px); background-size: 12px 12px; }
+    #cms-tactical-canvas .cms-project-number { float: right; margin: 0 0 8px 14px; color: rgba(197,160,89,.4); font: 400 14px "JetBrains Mono",monospace; }
+    #cms-tactical-canvas .cms-project-panel h3 { max-width: 330px; margin: 0 0 14px; font-size: clamp(25px,2.5vw,32px); line-height: 1.15; font-weight: 500; letter-spacing: -.04em; }
+    #cms-tactical-canvas .cms-project-panel p { margin: 0 0 22px; color: var(--cms-muted); font-size: 13px; line-height: 1.7; }
+    #cms-tactical-canvas .cms-project-panel ul { list-style: none; padding: 0; margin: 0 0 24px; }
+    #cms-tactical-canvas .cms-project-panel li { position: relative; padding: 9px 0 9px 20px; border-top: 1px solid var(--cms-border); color: #c0cbc5; font-size: 11px; line-height: 1.5; }
+    #cms-tactical-canvas .cms-project-panel li::before { content: "+"; position: absolute; left: 0; color: var(--cms-brass); font-family: "JetBrains Mono",monospace; }
+    #cms-tactical-canvas .cms-selector-cta { display: flex; justify-content: space-between; gap: 14px; align-items: center; padding: 16px 0 0; border-top: 1px solid rgba(197,160,89,.3); color: var(--cms-brass); font: 500 11px/1.5 "JetBrains Mono",monospace; }
+    #cms-tactical-canvas .cms-selector-cta:hover span:last-child { transform: translate(2px,-2px); }
+    #cms-tactical-canvas .cms-selector-cta span:last-child { transition: transform .2s; }
+    #cms-tactical-canvas .cms-project-detail { margin-top: 22px; border-top: 1px solid var(--cms-border); }
+    #cms-tactical-canvas summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    #cms-tactical-canvas summary::-webkit-details-marker { display: none; }
+    #cms-tactical-canvas summary::after { content: "+"; flex: 0 0 auto; color: var(--cms-brass); font: 400 18px "JetBrains Mono",monospace; transition: transform .2s; }
+    #cms-tactical-canvas details[open] > summary::after { transform: rotate(45deg); }
+    #cms-tactical-canvas .cms-project-detail summary { padding: 12px 0; color: var(--cms-brass); font: 500 10px/1.5 "JetBrains Mono",monospace; }
+    #cms-tactical-canvas .cms-project-detail p { margin: 2px 0 12px; }
+    #cms-tactical-canvas .cms-work-title-row { flex-wrap: wrap; gap: 12px; }
+    #cms-tactical-canvas .cms-work-link { display: inline-flex; align-items: center; min-height: 36px; font-size: 9px; }
+    #cms-tactical-canvas .cms-questions { display: grid; grid-template-columns: .8fr 1.2fr; gap: 72px; padding-block: 0 105px; }
+    #cms-tactical-canvas .cms-questions h2 { margin: 0; max-width: 320px; font-size: clamp(36px,4vw,52px); line-height: 1; font-weight: 500; letter-spacing: -.05em; }
+    #cms-tactical-canvas .cms-question { border-top: 1px solid var(--cms-border); }
+    #cms-tactical-canvas .cms-question:last-child { border-bottom: 1px solid var(--cms-border); }
+    #cms-tactical-canvas .cms-question summary { padding: 22px 0; font-size: 15px; line-height: 1.5; }
+    #cms-tactical-canvas .cms-question summary:hover { color: var(--cms-brass); }
+    #cms-tactical-canvas .cms-question p { margin: 0; padding: 0 32px 24px 0; color: var(--cms-muted); font-size: 13px; line-height: 1.8; }
+    #cms-tactical-canvas .cms-contact-copy { margin: 24px 0 32px; color: #aab7af; font-size: 15px; line-height: 1.8; }
+    #cms-tactical-canvas .cms-direct-email { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: var(--cms-primary); font-size: clamp(14px,1.6vw,20px); border-bottom: 1px solid var(--cms-brass); }
+    #cms-tactical-canvas .cms-direct-email:hover { color: var(--cms-brass); }
+    #cms-tactical-canvas .cms-contact-intro > .cms-direct { margin-top: 28px; }
+    #cms-tactical-canvas .cms-brief { min-width: 0; }
+    #cms-tactical-canvas .cms-brief > .cms-small-label { margin: 0 0 24px; }
+    #cms-tactical-canvas .cms-brief label { display: block; margin: 18px 0 8px; font-size: 12px; color: #c0cbc5; }
+    #cms-tactical-canvas .cms-brief :is(input,textarea,select) { display: block; width: 100%; min-width: 0; padding: 13px 12px; border: 1px solid rgba(255,255,255,.16); border-radius: 0; background: #101913; color: var(--cms-primary); font: 400 16px/1.5 Inter,sans-serif; color-scheme: dark; transition: border-color .2s; }
+    #cms-tactical-canvas .cms-brief :is(input,textarea,select):focus { border-color: var(--cms-brass); }
+    #cms-tactical-canvas .cms-brief textarea { resize: vertical; min-height: 120px; }
+    #cms-tactical-canvas .cms-form-hint { color: #aab7af; font-size: 11px; line-height: 1.65; margin: 10px 0 0; }
+    #cms-tactical-canvas .cms-brief-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-top: 22px; }
+    #cms-tactical-canvas .cms-brief-actions .cms-main-cta { width: 100%; border: 0; gap: 16px; cursor: pointer; text-align: left; line-height: 1.5; padding-block: 14px; }
+    #cms-tactical-canvas .cms-copy-brief { min-height: 40px; padding: 6px 0; border: 0; background: transparent; color: var(--cms-brass); font: 500 10px "JetBrains Mono",monospace; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }
+    #cms-tactical-canvas .cms-brief-feedback { color: var(--cms-brass); font-size: 12px; line-height: 1.7; margin: 10px 0 0; }
+    #cms-tactical-canvas .cms-brief-feedback:empty { display: none; }
+    #cms-tactical-canvas .cms-menu-toggle { display: none; border: 1px solid var(--cms-border); background: transparent; color: var(--cms-primary); padding: 10px; min-height: 44px; font: 500 10px "JetBrains Mono",monospace; }
+    #cms-tactical-canvas .cms-language button { min-height: 40px; font-size: 9px; }
+    @media (min-width: 861px) and (max-width: 1100px) {
+      #cms-tactical-canvas .cms-status { display: none; }
+      #cms-tactical-canvas .cms-hero { gap: 30px; }
+    }
+    @media (max-width: 860px) {
+      #cms-tactical-canvas .cms-menu-toggle { display: inline-flex; align-items: center; gap: 12px; }
+      #cms-tactical-canvas .cms-header-inner { position: relative; }
+      #cms-tactical-canvas .cms-nav.is-open { display: flex; position: absolute; top: 100%; left: 0; right: 0; padding: 16px 20px; background: #131e18; border: 1px solid var(--cms-border); flex-wrap: wrap; }
+      #cms-tactical-canvas .cms-nav a { min-height: 44px; display: inline-flex; align-items: center; }
+      #cms-tactical-canvas .cms-header-cta { display: none; }
+      #cms-tactical-canvas .cms-project-preview { min-height: 300px; }
+      #cms-tactical-canvas .cms-questions { gap: 36px; }
+      #cms-tactical-canvas .cms-work-item { grid-template-columns: 28px minmax(200px,.8fr) minmax(0,1.2fr); gap: 18px; }
+    }
+    @media (max-width: 560px) {
+      #cms-tactical-canvas .cms-logo-lockup { width: 148px; }
+      #cms-tactical-canvas .cms-header-inner { gap: 10px; }
+      #cms-tactical-canvas .cms-header-actions { gap: 6px; }
+      #cms-tactical-canvas .cms-menu-toggle { padding: 8px; gap: 6px; }
+      #cms-tactical-canvas .cms-language button { min-width: 27px; padding: 8px 4px; }
+      #cms-tactical-canvas .cms-hero { gap: 36px; padding-top: 54px; }
+      #cms-tactical-canvas .cms-hero h1 { font-size: clamp(46px,12vw,66px); }
+      #cms-tactical-canvas .cms-project-selector { padding: 24px 20px; }
+      #cms-tactical-canvas .cms-project-preview { min-height: 340px; }
+      #cms-tactical-canvas .cms-work-item { grid-template-columns: 1fr; }
+      #cms-tactical-canvas .cms-questions { grid-template-columns: 1fr; padding-bottom: 72px; }
+      #cms-tactical-canvas .cms-questions h2 { max-width: none; }
+      #cms-tactical-canvas .cms-contact-inner { padding: 32px 20px; }
+      #cms-tactical-canvas .cms-contact h2 { font-size: clamp(36px,10vw,54px); overflow-wrap: break-word; }
+      #cms-tactical-canvas .cms-feature .cms-specs { margin-top: 28px; }
+    }
+    @media (max-width: 360px) {
+      #cms-tactical-canvas .cms-logo-lockup { width: 124px; }
+      #cms-tactical-canvas .cms-menu-toggle { font-size: 9px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      #cms-tactical-canvas *, #cms-tactical-canvas *::after { animation: none !important; transition: none !important; }
+    }
   </style>
 
+  <a class="cms-skip" href="#cms-tactical-top" data-i18n="skipContent">Skip to content</a>
   <header class="cms-header">
     <div class="cms-header-inner cms-wrap">
       <a class="cms-logo" href="#cms-tactical-top" aria-label="Chosen Man Studio home">
         <img class="cms-logo-lockup" src="assets/brand/chosen-man-primary-on-dark.png" alt="Chosen Man Studio" width="1800" height="480">
       </a>
-      <nav class="cms-nav" aria-label="Primary navigation"><a href="#cms-tactical-work" data-i18n="navCapabilities">Capabilities</a><a href="#cms-tactical-portfolio" data-i18n="navWork">Work</a><a href="#cms-tactical-contact" data-i18n="navContact">Contact</a></nav>
-      <div class="cms-header-actions"><div class="cms-language" role="group" aria-label="Language"><button type="button" data-language="en" aria-pressed="true">EN</button><button type="button" data-language="es" aria-pressed="false">ES</button><button type="button" data-language="yk" aria-pressed="false">YK</button></div><span class="cms-status"><i></i><span data-i18n="availability">Available for Q3/Q4</span></span><a class="cms-header-cta" href="#cms-tactical-contact"><span data-i18n="headerCta">Start a project</span> <span aria-hidden="true">↗</span></a></div>
+      <nav class="cms-nav" id="cms-primary-nav" aria-label="Primary navigation"><a href="#cms-tactical-work" data-i18n="navCapabilities">Capabilities</a><a href="#cms-tactical-portfolio" data-i18n="navWork">Work</a><a href="#cms-tactical-contact" data-i18n="navContact">Contact</a></nav>
+      <div class="cms-header-actions"><button class="cms-menu-toggle" type="button" aria-expanded="false" aria-controls="cms-primary-nav" hidden><span data-i18n="menuLabel">Menu</span> <span aria-hidden="true">+</span></button><div class="cms-language" role="group" aria-label="Language"><button type="button" data-language="en" aria-pressed="true">EN</button><button type="button" data-language="es" aria-pressed="false">ES</button><button type="button" data-language="yk" aria-pressed="false">YK</button></div><span class="cms-status"><i></i><span data-i18n="availability">Available for Q3/Q4</span></span><a class="cms-header-cta" href="#cms-tactical-contact"><span data-i18n="headerCta">Start a project</span> <span aria-hidden="true">↗</span></a></div>
     </div>
   </header>
 
@@ -370,27 +460,38 @@
       <div>
         <p class="cms-kicker" data-i18n="heroKicker">Web design · App development · IT &amp; security</p>
         <h1 data-i18n-html="heroTitle">Websites built<br><span>to earn their keep.</span></h1>
-        <p class="cms-lede" data-i18n="heroLede">Bespoke web design, custom app development, and practical IT and security consulting for contractors, small businesses, and growing companies. Based in Westminster, Maryland. Working with clients nationwide.</p>
-        <div class="cms-hero-actions"><a class="cms-main-cta" href="#cms-tactical-contact"><span data-i18n="heroCta">Commission the studio</span> <span aria-hidden="true">↗</span></a><p class="cms-direct" data-i18n-html="heroDirect">Straight-talking.<br><b>Properly made.</b></p></div>
+        <p class="cms-lede" data-i18n="heroLede">You’ve put the work into your business. Let’s give it a website that shows it. I’m Josh, a web designer and developer building custom websites, apps, and practical IT and security solutions for small businesses nationwide.</p>
+        <div class="cms-hero-actions"><a class="cms-main-cta" href="#cms-tactical-contact"><span data-i18n="heroCta">Tell me about your project</span> <span aria-hidden="true">↗</span></a><a class="cms-text-link" href="#cms-tactical-portfolio"><span data-i18n="exploreWork">Explore the work</span> <span aria-hidden="true">↓</span></a></div>
         <p class="cms-service-area" data-i18n="serviceArea">Westminster roots · Nationwide reach · Remote-first collaboration</p>
       </div>
 
-      <div class="cms-terminal" aria-label="Interactive development preview">
-        <div class="cms-terminal-bar"><span class="cms-terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span><div class="cms-terminal-tabs"><button class="cms-terminal-tab" type="button" data-code-tab="build" aria-pressed="true">build.ts</button><button class="cms-terminal-tab" type="button" data-code-tab="audit" aria-pressed="false">audit.log</button></div></div>
-        <pre class="cms-code" id="cms-code-output" aria-live="polite"><span class="comment">// chosen-man.studio / build parameters</span>
-
-<span class="key">const</span> website = {
-  firstImpression: <span class="value">"credible"</span>,
-  showcase: <span class="value">"real work"</span>,
-  enquiries: <span class="value">"simple"</span>,
-  mobile: <span class="value">"fast"</span>
-};
-
-<span class="key">await</span> studio.designWithPurpose();
-<span class="key">await</span> studio.buildItProperly();
-
-<span class="comment">// status: ready for deployment</span></pre>
-        <div class="cms-terminal-foot"><button class="cms-egg-trigger" id="cms-egg-trigger" type="button" aria-expanded="false" aria-controls="cms-easter-egg">CMS / FIELD NOTE 001</button><b>● SYSTEM READY</b></div>
+      <div class="cms-terminal" aria-labelledby="cms-selector-heading">
+        <div class="cms-terminal-bar"><span class="cms-terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="cms-small-label" data-i18n="selectorLabel">01 / Your next project</span></div>
+        <div class="cms-project-selector">
+          <h2 id="cms-selector-heading" data-i18n="selectorHeading">What do you have in mind?</h2>
+          <p class="cms-selector-intro" data-i18n="selectorIntro">Pick a starting point. We can work out the details together.</p>
+          <div class="cms-project-choices" role="group" aria-labelledby="cms-selector-heading" hidden><button type="button" data-project="web" aria-pressed="true" aria-controls="cms-project-web"><span data-i18n="typeWeb">A website</span></button><button type="button" data-project="app" aria-pressed="false" aria-controls="cms-project-app"><span data-i18n="typeApp">An app</span></button><button type="button" data-project="security" aria-pressed="false" aria-controls="cms-project-security"><span data-i18n="typeSecurity">IT & security</span></button></div>
+          <div class="cms-project-preview" aria-live="polite" aria-atomic="true"><div class="cms-project-panel" id="cms-project-web">
+  <span class="cms-project-number" aria-hidden="true">/ 01</span>
+  <h3 data-i18n="webTitle">Give people a reason to get in touch.</h3>
+  <p data-i18n="webBody">A website that shows your work, explains your services, and makes the next step obvious.</p>
+  <ul><li data-i18n="webPointA">A look that belongs to your business</li><li data-i18n="webPointB">Fast, usable pages on phones and desktops</li><li data-i18n="webPointC">A clear route to an inquiry or estimate</li></ul>
+</div>
+<div class="cms-project-panel" id="cms-project-app" hidden>
+  <span class="cms-project-number" aria-hidden="true">/ 02</span>
+  <h3 data-i18n="appTitle">Make the everyday work a little easier.</h3>
+  <p data-i18n="appBody">Have a repetitive task or an idea for a useful product? Let’s work out what’s worth building first.</p>
+  <ul><li data-i18n="appPointA">A focused first version with a clear purpose</li><li data-i18n="appPointB">Interfaces built around the people using them</li><li data-i18n="appPointC">Development, testing, and release in one place</li></ul>
+</div>
+<div class="cms-project-panel" id="cms-project-security" hidden>
+  <span class="cms-project-number" aria-hidden="true">/ 03</span>
+  <h3 data-i18n="securityTitle">Get a clearer picture of your IT.</h3>
+  <p data-i18n="securityBody">Practical guidance informed by specialized intelligence experience, explained in language you can use.</p>
+  <ul><li data-i18n="securityPointA">Access, backups, hosting, and vendor choices</li><li data-i18n="securityPointB">Website and application security reviews</li><li data-i18n="securityPointC">Priorities you can act on, at a sensible scope</li></ul>
+</div></div>
+          <a class="cms-selector-cta" href="#cms-tactical-contact" id="cms-project-start"><span data-i18n="selectedCta">Let’s talk about this</span> <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="cms-terminal-foot"><button class="cms-egg-trigger" id="cms-egg-trigger" type="button" aria-expanded="false" aria-controls="cms-easter-egg">CMS / FIELD NOTE 001</button><b data-i18n="selectorFoot">DIRECT TO JOSH</b></div>
         <aside class="cms-easter-egg" id="cms-easter-egg" aria-hidden="true" inert><div class="cms-easter-inner"><div class="cms-easter-copy"><span><strong>Yorkshire mode: proper.</strong>Tha found the field note.</span><a href="https://www.youtube.com/watch?v=tE8d-uGmIWk" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a></div><div class="cms-video"><iframe id="cms-easter-video" data-src="https://www.youtube-nocookie.com/embed/tE8d-uGmIWk?rel=0" title="Sean Bean: Yorkshireman compilation" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div></aside>
       </div>
     </section>
@@ -413,15 +514,19 @@
         <article class="cms-work-item">
           <span class="cms-work-number" aria-hidden="true">01</span>
           <div class="cms-work-media"><img src="assets/work/driver-driver-home.png" alt="Driver Driver Android app home screen" width="1920" height="1080" loading="lazy"><span class="cms-work-status" data-i18n="driverStatus">Released Android app</span></div>
-          <div class="cms-work-copy"><span class="cms-work-type" data-i18n="driverType">Product / Android utility</span><div class="cms-work-title-row"><h3>Driver Driver</h3><a class="cms-work-link" href="https://github.com/chosen-man/driver-driver" target="_blank" rel="noopener noreferrer"><span data-i18n="driverLink">View the project</span> ↗</a></div><p data-i18n="driverBody">A handheld-first Android app that helps users discover and download emulator graphics-driver packages from public GitHub releases. Designed, developed, secured, and released by Chosen Man Studio.</p><div class="cms-work-tags"><span data-i18n="driverTagOne">Android</span><span data-i18n="driverTagTwo">Product design</span><span data-i18n="driverTagThree">Release engineering</span></div></div>
+          <div class="cms-work-copy"><span class="cms-work-type" data-i18n="driverType">Product / Android utility</span><div class="cms-work-title-row"><h3>Driver Driver</h3><a class="cms-work-link" href="https://github.com/chosen-man/driver-driver" target="_blank" rel="noopener noreferrer"><span data-i18n="driverLink">View the project</span> ↗</a></div><p data-i18n="driverBody">A handheld-first Android app that helps users discover and download emulator graphics-driver packages from public GitHub releases. Designed, developed, secured, and released by Chosen Man Studio.</p><div class="cms-work-tags"><span data-i18n="driverTagOne">Android</span><span data-i18n="driverTagTwo">Product design</span><span data-i18n="driverTagThree">Release engineering</span></div><details class="cms-project-detail"><summary><span data-i18n="insideProject">A closer look</span></summary><p data-i18n="driverDetail">The brief: make graphics-driver discovery usable on an Android handheld. The work brings release discovery and package downloads into a focused interface, with product design, development, and release handled by the studio.</p></details></div>
         </article>
         <article class="cms-work-item">
           <span class="cms-work-number" aria-hidden="true">02</span>
-          <div class="cms-work-media"><img src="assets/work/romeos-contracting.jpg" alt="Finished bathroom project presented on Romeo's Contracting website" width="680" height="510" loading="lazy"><span class="cms-work-status" data-i18n="romeoStatus">Live client website</span></div>
-          <div class="cms-work-copy"><span class="cms-work-type" data-i18n="romeoType">Client / Contractor website</span><div class="cms-work-title-row"><h3>Romeo’s Contracting</h3><a class="cms-work-link" href="https://romeoscontracting.com" target="_blank" rel="noopener noreferrer"><span data-i18n="romeoLink">Visit the website</span> ↗</a></div><p data-i18n="romeoBody">A fast, portfolio-first website for a licensed remodeling contractor, built around real project photography, clear services, local search visibility, and a direct path to an estimate.</p><div class="cms-work-tags"><span data-i18n="romeoTagOne">Web design</span><span data-i18n="romeoTagTwo">Development</span><span data-i18n="romeoTagThree">Local SEO</span></div></div>
+          <a class="cms-work-media" href="https://romeoscontracting.com" target="_blank" rel="noopener noreferrer"><img src="assets/work/romeos-website-preview.jpg" alt="Romeo’s Contracting website, featuring its remodeling work and estimate request" width="1440" height="900" loading="lazy"><span class="cms-work-status" data-i18n="romeoStatus">Live client website</span></a>
+          <div class="cms-work-copy"><span class="cms-work-type" data-i18n="romeoType">Client / Contractor website</span><div class="cms-work-title-row"><h3>Romeo’s Contracting</h3><a class="cms-work-link" href="https://romeoscontracting.com" target="_blank" rel="noopener noreferrer"><span data-i18n="romeoLink">Visit the website</span> ↗</a></div><p data-i18n="romeoBody">A fast, portfolio-first website for a licensed remodeling contractor, built around real project photography, clear services, local search visibility, and a direct path to an estimate.</p><div class="cms-work-tags"><span data-i18n="romeoTagOne">Web design</span><span data-i18n="romeoTagTwo">Development</span><span data-i18n="romeoTagThree">Local SEO</span></div><details class="cms-project-detail"><summary><span data-i18n="insideProject">A closer look</span></summary><p data-i18n="romeoDetail">The brief: help homeowners see the quality of Romeo’s work and request an estimate. Real project photography leads the site, supported by clear service information and contact routes built for mobile visitors.</p></details></div>
         </article>
       </div>
     </section>
+    <section class="cms-questions cms-wrap" aria-labelledby="cms-questions-title">
+  <div><p class="cms-kicker" data-i18n="faqKicker">Before we start</p><h2 id="cms-questions-title" data-i18n="faqTitle">A few fair questions.</h2></div>
+  <div class="cms-question-list"><details class="cms-question"><summary><span data-i18n="faqBudget">Is my budget too small?</span></summary><p data-i18n="faqBudgetBody">Tell me what you have in mind and what you’re comfortable spending. We can discuss a smaller first version, agree on the essentials, and leave room to add more later. You’ll know the scope and price before committing.</p></details><details class="cms-question"><summary><span data-i18n="faqRemote">Do we need to be local to each other?</span></summary><p data-i18n="faqRemoteBody">No. I’m based in Westminster, Maryland, and work remotely with clients nationwide. We can plan, review, and hand over your project online.</p></details><details class="cms-question"><summary><span data-i18n="faqStart">What happens after I get in touch?</span></summary><p data-i18n="faqStartBody">I’ll read your brief and reply personally. We’ll talk through what you need, what already exists, and a realistic scope. If it’s a good fit, I’ll put the proposed work and pricing in writing.</p></details></div>
+</section>
   </main>
 
   <section class="cms-service-standard" aria-labelledby="cms-service-title">
@@ -433,8 +538,27 @@
 
   <section class="cms-contact" id="cms-tactical-contact">
     <div class="cms-contact-inner cms-wrap">
-      <div><p class="cms-kicker" data-i18n="contactKicker">Direct line</p><h2 data-i18n-html="contactTitle">Have a project in mind?<br><span>Let’s talk.</span></h2></div>
-      <div class="cms-contact-block"><p data-i18n="contactBody">Tell us what needs doing, what’s getting in the way, and what a good result looks like. You’ll get a considered reply, not an automated sequence.</p><a class="cms-email" href="mailto:hello@chosenman.studio">hello@chosenman.studio <span aria-hidden="true">↗</span></a></div>
+      <div class="cms-contact-intro">
+        <p class="cms-kicker" data-i18n="contactKicker">You’ll be talking to Josh</p>
+        <h2 data-i18n-html="contactTitle">Have a project in mind?<br><span>Let’s talk.</span></h2>
+        <p class="cms-contact-copy" data-i18n="contactBody">A new idea, an old website, or something that needs sorting. Tell me where you are with it. You don’t need a technical brief to start a conversation.</p>
+        <p class="cms-small-label" data-i18n="directEmail">Prefer to email directly?</p>
+        <a class="cms-direct-email" href="mailto:hello@chosenman.studio">hello@chosenman.studio <span aria-hidden="true">↗</span></a>
+        <p class="cms-direct" data-i18n-html="heroDirect">Straight-talking.<br><b>Properly made.</b></p>
+      </div>
+      <form class="cms-brief" id="cms-project-brief" hidden>
+        <p class="cms-small-label" data-i18n="briefLabel">02 / A quick project note</p>
+        <label for="cms-brief-type" data-i18n="briefType">I’m looking for</label>
+        <select id="cms-brief-type" name="project"><option value="web" data-i18n="typeWeb">A website</option><option value="app" data-i18n="typeApp">An app</option><option value="security" data-i18n="typeSecurity">IT & security</option><option value="unsure" data-i18n="typeUnsure">Not sure yet</option></select>
+        <label for="cms-brief-name" data-i18n="briefName">Your name or business (optional)</label>
+        <input id="cms-brief-name" name="name" autocomplete="name" maxlength="100">
+        <label for="cms-brief-message" data-i18n="briefMessage">What would you like help with?</label>
+        <textarea id="cms-brief-message" name="message" rows="4" maxlength="1200" required aria-describedby="cms-brief-hint"></textarea>
+        <p id="cms-brief-hint" class="cms-form-hint" data-i18n="briefHint">A couple of sentences is plenty. Please leave out passwords or sensitive information.</p>
+        <div class="cms-brief-actions"><button class="cms-main-cta" type="submit"><span data-i18n="briefSend">Open email with my brief</span> <span aria-hidden="true">↗</span></button><button type="button" class="cms-copy-brief"><span data-i18n="briefCopy">Copy brief</span></button></div>
+        <p class="cms-form-hint" data-i18n="briefNotice">This opens your email app. Nothing is submitted here, and your brief isn’t stored on this site.</p>
+        <p class="cms-brief-feedback" id="cms-brief-feedback" role="status"></p>
+      </form>
     </div>
   </section>
 
@@ -443,84 +567,345 @@
   <script>
     (() => {
       const root = document.getElementById('cms-tactical-canvas');
-      const output = root.querySelector('#cms-code-output');
+      let currentLanguage = 'en';
+      let selectedProject = 'web';
       const translations = {
-        en: {
-          pageTitle: 'Web Design, App Development & IT Security | Chosen Man Studio',
-          navCapabilities: 'Capabilities', navWork: 'Work', navContact: 'Contact', availability: 'Available for Q3/Q4', headerCta: 'Start a project',
-          heroKicker: 'Web design · App development · IT & security', heroTitle: 'Websites built<br><span>to earn their keep.</span>',
-          heroLede: 'Bespoke web design, custom app development, and practical IT and security consulting for contractors, small businesses, and growing companies. Based in Westminster, Maryland. Working with clients nationwide.',
-          heroCta: 'Commission the studio', heroDirect: 'Straight-talking.<br><b>Properly made.</b>',
-          serviceArea: 'Westminster roots · Nationwide reach · Remote-first collaboration',
-          capabilitiesKicker: 'Core capabilities', capabilitiesTitle: 'Websites, apps, IT, and advice.<br>Built for business.',
-          capabilitiesIntro: 'Web strategy, UX design, application development, practical IT systems, security guidance, and launch stay in one pair of hands, from the first conversation to finished delivery.',
-          cardOneIndex: '01 / BESPOKE WEBSITES', cardOneTitle: 'Your best work, presented properly.', cardOneBody: 'Custom websites that make a strong first impression, show what you do, and make it easy for customers to get in touch. Clear scope, honest pricing, and flexible ways to work together make a properly built website more attainable than most people expect.',
-          cardOneSpecAHead: 'Original', cardOneSpecABody: 'web design', cardOneSpecBHead: 'Flexible scope', cardOneSpecBBody: 'real-world budgets',
-          cardTwoIndex: '02 / APP DEVELOPMENT', cardTwoTitle: 'Custom apps built around the work', cardTwoBody: 'Focused business tools, customer portals, dashboards, and web applications designed around how your team actually operates.',
-          cardThreeIndex: '03 / IT & SECURITY CONSULTING', cardThreeTitle: 'Clear systems. Sensible security.', cardThreeBody: 'Secure hosting, account access, backups, vendor choices, website and app reviews, and incident readiness. Backed by extensive specialized experience across Army Intelligence, the NSA, and the CIA.',
-          cardFourIndex: '04 / DIRECT COLLABORATION', cardFourTitle: 'One point of contact. Start to finish.', cardFourBody: 'No sales layer and no confusing hand-offs. You work directly with the person designing and building your project, with fair, affordable rates for honest, hardworking people growing a business.',
-          portfolioKicker: 'Selected work', portfolioTitle: 'A couple of things<br>built properly.', portfolioIntro: 'Two very different projects, each shaped around a real audience and a clear job to do.',
-          driverStatus: 'Released Android app', driverType: 'Product / Android utility', driverLink: 'View the project', driverBody: 'A handheld-first Android app that helps users discover and download emulator graphics-driver packages from public GitHub releases. Designed, developed, secured, and released by Chosen Man Studio.',
-          driverTagOne: 'Android', driverTagTwo: 'Product design', driverTagThree: 'Release engineering',
-          romeoStatus: 'Live client website', romeoType: 'Client / Contractor website', romeoLink: 'Visit the website', romeoBody: 'A fast, portfolio-first website for a licensed remodeling contractor, built around real project photography, clear services, local search visibility, and a direct path to an estimate.',
-          romeoTagOne: 'Web design', romeoTagTwo: 'Development', romeoTagThree: 'Local SEO',
-          veteranKicker: 'Veteran-owned studio', veteranTitle: 'Service shaped the standard.', veteranBody: 'Chosen Man Studio is veteran-owned. That experience informs how we work: clear communication, personal responsibility, and no fuss when there’s a job to finish. We’re proud to support fellow veterans and veteran-owned businesses on both sides of the Atlantic.',
-          veteranNoteA: 'Veteran-owned', veteranNoteB: 'UK & US community', veteranNoteC: 'Supporting those who served',
-          contactKicker: 'Direct line', contactTitle: 'Have a project in mind?<br><span>Let’s talk.</span>', contactBody: 'Tell us what needs doing, what’s getting in the way, and what a good result looks like. You’ll get a considered reply, not an automated sequence.',
-          footerMeta: '© 2026 · Westminster, Maryland<br>Working with clients nationwide'
-        },
-        es: {
-          pageTitle: 'Diseño web, apps y seguridad TI | Chosen Man Studio',
-          navCapabilities: 'Servicios', navWork: 'Proyectos', navContact: 'Contacto', availability: 'Disponible para T3/T4', headerCta: 'Iniciar un proyecto',
-          heroKicker: 'Diseño web · Desarrollo de apps · TI y seguridad', heroTitle: 'Webs creadas<br><span>para ganarse el jornal.</span>',
-          heroLede: 'Diseño web, desarrollo de aplicaciones y consultoría práctica de TI y seguridad para contratistas, pequeñas empresas y negocios en crecimiento. Con sede en Westminster, Maryland. Trabajamos con clientes en todo Estados Unidos.',
-          heroCta: 'Encargar un proyecto', heroDirect: 'Trato directo.<br><b>Trabajo bien hecho.</b>',
-          serviceArea: 'Raíces en Westminster · Alcance nacional · Colaboración remota',
-          capabilitiesKicker: 'Servicios principales', capabilitiesTitle: 'Webs, apps, TI y asesoría.<br>Hechas para el negocio.',
-          capabilitiesIntro: 'Estrategia web, diseño UX, desarrollo de aplicaciones, sistemas de TI, seguridad y lanzamiento permanecen en las mismas manos.',
-          cardOneIndex: '01 / WEBS A MEDIDA', cardOneTitle: 'Tu mejor trabajo, bien presentado.', cardOneBody: 'Webs personalizadas que causan una gran primera impresión, muestran lo que haces y facilitan el contacto. Un alcance claro, precios honestos y formas flexibles de trabajar hacen que una web bien construida sea más asequible de lo que muchos esperan.',
-          cardOneSpecAHead: 'Original', cardOneSpecABody: 'diseño web', cardOneSpecBHead: 'Alcance flexible', cardOneSpecBBody: 'presupuestos reales',
-          cardTwoIndex: '02 / DESARROLLO DE APPS', cardTwoTitle: 'Apps creadas para el trabajo real', cardTwoBody: 'Herramientas de negocio, portales de clientes, paneles y aplicaciones web adaptadas a la forma de trabajar de tu equipo.',
-          cardThreeIndex: '03 / CONSULTORÍA DE TI Y SEGURIDAD', cardThreeTitle: 'Sistemas claros. Seguridad sensata.', cardThreeBody: 'Alojamiento seguro, control de accesos, copias de seguridad, proveedores, revisiones web y de aplicaciones, y preparación ante incidentes. Respaldado por amplia experiencia especializada en Inteligencia del Ejército, la NSA y la CIA.',
-          cardFourIndex: '04 / COLABORACIÓN DIRECTA', cardFourTitle: 'Un solo contacto. De principio a fin.', cardFourBody: 'Sin capas comerciales ni traspasos confusos. Trabajas directamente con la persona que diseña y desarrolla tu proyecto, con tarifas justas y asequibles para gente honrada y trabajadora que quiere hacer crecer su negocio.',
-          portfolioKicker: 'Trabajo seleccionado', portfolioTitle: 'Un par de proyectos<br>bien hechos.', portfolioIntro: 'Dos proyectos muy distintos, cada uno diseñado para un público real y una tarea clara.',
-          driverStatus: 'App Android publicada', driverType: 'Producto / utilidad Android', driverLink: 'Ver el proyecto', driverBody: 'Una aplicación Android para dispositivos portátiles que ayuda a encontrar y descargar paquetes de controladores gráficos para emuladores desde versiones públicas de GitHub. Diseñada, desarrollada, protegida y publicada por Chosen Man Studio.',
-          driverTagOne: 'Android', driverTagTwo: 'Diseño de producto', driverTagThree: 'Ingeniería de lanzamiento',
-          romeoStatus: 'Web de cliente activa', romeoType: 'Cliente / web para contratista', romeoLink: 'Visitar la web', romeoBody: 'Una web rápida y centrada en el portafolio para un contratista de remodelación con licencia, construida con fotografías reales, servicios claros, visibilidad local y un camino directo para solicitar presupuesto.',
-          romeoTagOne: 'Diseño web', romeoTagTwo: 'Desarrollo', romeoTagThree: 'SEO local',
-          veteranKicker: 'Estudio propiedad de un veterano', veteranTitle: 'El servicio marcó nuestro estándar.', veteranBody: 'Chosen Man Studio pertenece a un veterano. Esa experiencia define nuestra forma de trabajar: comunicación clara, responsabilidad personal y determinación para terminar bien el trabajo. Nos enorgullece apoyar a otros veteranos y negocios de veteranos a ambos lados del Atlántico.',
-          veteranNoteA: 'Propiedad de un veterano', veteranNoteB: 'Comunidad del Reino Unido y EE. UU.', veteranNoteC: 'Apoyando a quienes sirvieron',
-          contactKicker: 'Línea directa', contactTitle: '¿Tienes un proyecto en mente?<br><span>Hablemos.</span>', contactBody: 'Cuéntanos qué necesitas, qué te está frenando y cómo sería un buen resultado. Recibirás una respuesta meditada, no una secuencia automatizada.',
-          footerMeta: '© 2026 · Westminster, Maryland<br>Trabajando con clientes en todo EE. UU.'
-        },
-        yk: {
-          pageTitle: 'Web Design, App Development & IT Security | Chosen Man Studio',
-          navCapabilities: 'What we do', navWork: 'Our work', navContact: 'Gi’ us a shout', availability: 'Taking bookings Q3/Q4', headerCta: 'Gi’ us a shout',
-          heroKicker: 'Web design · App development · IT & security', heroTitle: 'Websites done reyt.<br><span>Built to earn their keep.</span>',
-          heroLede: 'Bespoke websites, custom apps, and practical IT and security advice for trades, small firms, and growing businesses, wherever tha happens to be. Based in Westminster, Maryland and working right across t’country. No faff, just work done reyt.',
-          heroCta: 'Let’s crack on', heroDirect: 'No faff. No flannel.<br><b>Made proper.</b>',
-          serviceArea: 'Westminster roots · Work sent nationwide · No distance, no bother',
-          capabilitiesKicker: 'What we’re good at', capabilitiesTitle: 'Websites, apps, IT, and sound advice.<br>Made proper.',
-          capabilitiesIntro: 'Web strategy, design, app development, practical IT, security advice, and launch stay with one pair of hands. No passing thee round t’houses.',
-          cardOneIndex: '01 / PROPER WEBSITES', cardOneTitle: 'Thy best work, shown proper.', cardOneBody: 'A one-off website that looks reyt, shows folk what tha does, and makes it dead easy for ’em to get in touch. Clear scope, fair prices, and flexible ways to work mean a proper website can cost less than tha might reckon.',
-          cardOneSpecAHead: 'Nowt off t’shelf', cardOneSpecABody: 'web design', cardOneSpecBHead: 'Fairly priced', cardOneSpecBBody: 'made to fit t’job',
-          cardTwoIndex: '02 / APP DEVELOPMENT', cardTwoTitle: 'Apps built round how tha works', cardTwoBody: 'Business tools, customer portals, dashboards, and web apps made to fit t’job, not t’other way round.',
-          cardThreeIndex: '03 / IT & SECURITY', cardThreeTitle: 'Systems sorted. Security done reyt.', cardThreeBody: 'Secure hosting, account access, backups, suppliers, website and app reviews, and being ready when summat goes wrong. Backed by extensive specialist experience across Army Intelligence, the NSA, and the CIA.',
-          cardFourIndex: '04 / STRAIGHT DEALING', cardFourTitle: 'One person to deal with. Start to finish.', cardFourBody: 'No sales patter and no being passed from pillar to post. Tha deals direct with t’person designing and building thy project, at fair, affordable rates for honest, hardworking folk growing a business.',
-          portfolioKicker: 'A bit o’work', portfolioTitle: 'A couple o’things<br>made proper.', portfolioIntro: 'Two very different jobs, each built for real folk with a clear job to get done.',
-          driverStatus: 'Android app, out in t’wild', driverType: 'Product / Android utility', driverLink: 'Have a look', driverBody: 'A handheld-first Android app that helps folk find and download emulator graphics-driver packages from public GitHub releases. Designed, built, secured, and released by Chosen Man Studio.',
-          driverTagOne: 'Android', driverTagTwo: 'Product design', driverTagThree: 'Release engineering',
-          romeoStatus: 'Live client website', romeoType: 'Client / trades website', romeoLink: 'See t’website', romeoBody: 'A quick, portfolio-first website for a licensed remodeling contractor, built round real project photos, clear services, local search, and a straight path to getting an estimate.',
-          romeoTagOne: 'Web design', romeoTagTwo: 'Development', romeoTagThree: 'Local SEO',
-          veteranKicker: 'Veteran-owned studio', veteranTitle: 'Service set t’standard.', veteranBody: 'Chosen Man Studio is veteran-owned. We say what we mean, stand by our work, and get t’job finished proper. We’re proud to back fellow veterans and veteran-owned businesses on both sides o’t’Atlantic.',
-          veteranNoteA: 'Veteran-owned', veteranNoteB: 'UK & US community', veteranNoteC: 'Backing them that served',
-          contactKicker: 'Gi’ us a shout', contactTitle: 'Got summat needs doing?<br><span>Let’s have a word.</span>', contactBody: 'Tell us what wants sorting, what’s getting in t’way, and what a good result looks like. Tha’ll get a proper reply, not some automated carry-on.',
-          footerMeta: '© 2026 · Westminster, Maryland<br>Working wi’clients all over t’country'
-        }
-      };
+  "en": {
+    "pageTitle": "Web Design, App Development & IT Security | Chosen Man Studio",
+    "navCapabilities": "Capabilities",
+    "navWork": "Work",
+    "navContact": "Contact",
+    "availability": "Available for Q3/Q4",
+    "headerCta": "Start a project",
+    "heroKicker": "Web design · App development · IT & security",
+    "heroTitle": "Websites built<br><span>to earn their keep.</span>",
+    "heroLede": "You’ve put the work into your business. Let’s give it a website that shows it. I’m Josh, a web designer and developer building custom websites, apps, and practical IT and security solutions for small businesses nationwide.",
+    "heroCta": "Tell me about your project",
+    "heroDirect": "Straight-talking.<br><b>Properly made.</b>",
+    "serviceArea": "Westminster roots · Nationwide reach · Remote-first collaboration",
+    "capabilitiesKicker": "Core capabilities",
+    "capabilitiesTitle": "Websites, apps, IT, and advice.<br>Built for business.",
+    "capabilitiesIntro": "Web strategy, UX design, application development, practical IT systems, security guidance, and launch stay in one pair of hands, from the first conversation to finished delivery.",
+    "cardOneIndex": "01 / BESPOKE WEBSITES",
+    "cardOneTitle": "Your best work, presented properly.",
+    "cardOneBody": "Custom websites that make a strong first impression, show what you do, and make it easy for customers to get in touch. Clear scope, honest pricing, and flexible ways to work together make a properly built website more attainable than most people expect.",
+    "cardOneSpecAHead": "Original",
+    "cardOneSpecABody": "web design",
+    "cardOneSpecBHead": "Flexible scope",
+    "cardOneSpecBBody": "real-world budgets",
+    "cardTwoIndex": "02 / APP DEVELOPMENT",
+    "cardTwoTitle": "Custom apps built around the work",
+    "cardTwoBody": "Focused business tools, customer portals, dashboards, and web applications designed around how your team actually operates.",
+    "cardThreeIndex": "03 / IT & SECURITY CONSULTING",
+    "cardThreeTitle": "Clear systems. Sensible security.",
+    "cardThreeBody": "Secure hosting, account access, backups, vendor choices, website and app reviews, and incident readiness. Backed by extensive specialized experience across Army Intelligence, the NSA, and the CIA.",
+    "cardFourIndex": "04 / DIRECT COLLABORATION",
+    "cardFourTitle": "One point of contact. Start to finish.",
+    "cardFourBody": "No sales layer and no confusing hand-offs. You work directly with the person designing and building your project, with fair, affordable rates for honest, hardworking people growing a business.",
+    "portfolioKicker": "Selected work",
+    "portfolioTitle": "A couple of things<br>built properly.",
+    "portfolioIntro": "Two very different projects, each shaped around a real audience and a clear job to do.",
+    "driverStatus": "Released Android app",
+    "driverType": "Product / Android utility",
+    "driverLink": "View the project",
+    "driverBody": "A handheld-first Android app that helps users discover and download emulator graphics-driver packages from public GitHub releases. Designed, developed, secured, and released by Chosen Man Studio.",
+    "driverTagOne": "Android",
+    "driverTagTwo": "Product design",
+    "driverTagThree": "Release engineering",
+    "romeoStatus": "Live client website",
+    "romeoType": "Client / Contractor website",
+    "romeoLink": "Visit the website",
+    "romeoBody": "A fast, portfolio-first website for a licensed remodeling contractor, built around real project photography, clear services, local search visibility, and a direct path to an estimate.",
+    "romeoTagOne": "Web design",
+    "romeoTagTwo": "Development",
+    "romeoTagThree": "Local SEO",
+    "veteranKicker": "Veteran-owned studio",
+    "veteranTitle": "Service shaped the standard.",
+    "veteranBody": "Chosen Man Studio is veteran-owned. That experience informs how we work: clear communication, personal responsibility, and no fuss when there’s a job to finish. We’re proud to support fellow veterans and veteran-owned businesses on both sides of the Atlantic.",
+    "veteranNoteA": "Veteran-owned",
+    "veteranNoteB": "UK & US community",
+    "veteranNoteC": "Supporting those who served",
+    "contactKicker": "You’ll be talking to Josh",
+    "contactTitle": "Have a project in mind?<br><span>Let’s talk.</span>",
+    "contactBody": "A new idea, an old website, or something that needs sorting. Tell me where you are with it. You don’t need a technical brief to start a conversation.",
+    "footerMeta": "© 2026 · Westminster, Maryland<br>Working with clients nationwide",
+    "exploreWork": "Explore the work",
+    "selectorLabel": "01 / Your next project",
+    "selectorHeading": "What do you have in mind?",
+    "selectorIntro": "Pick a starting point. We can work out the details together.",
+    "typeWeb": "A website",
+    "typeApp": "An app",
+    "typeSecurity": "IT & security",
+    "typeUnsure": "Not sure yet",
+    "selectedCta": "Let’s talk about this",
+    "selectorFoot": "DIRECT TO JOSH",
+    "webTitle": "Give people a reason to get in touch.",
+    "webBody": "A website that shows your work, explains your services, and makes the next step obvious.",
+    "webPointA": "A look that belongs to your business",
+    "webPointB": "Fast, usable pages on phones and desktops",
+    "webPointC": "A clear route to an inquiry or estimate",
+    "appTitle": "Make the everyday work a little easier.",
+    "appBody": "Have a repetitive task or an idea for a useful product? Let’s work out what’s worth building first.",
+    "appPointA": "A focused first version with a clear purpose",
+    "appPointB": "Interfaces built around the people using them",
+    "appPointC": "Development, testing, and release in one place",
+    "securityTitle": "Get a clearer picture of your IT.",
+    "securityBody": "Practical guidance informed by specialized intelligence experience, explained in language you can use.",
+    "securityPointA": "Access, backups, hosting, and vendor choices",
+    "securityPointB": "Website and application security reviews",
+    "securityPointC": "Priorities you can act on, at a sensible scope",
+    "insideProject": "A closer look",
+    "driverDetail": "The brief: make graphics-driver discovery usable on an Android handheld. The work brings release discovery and package downloads into a focused interface, with product design, development, and release handled by the studio.",
+    "romeoDetail": "The brief: help homeowners see the quality of Romeo’s work and request an estimate. Real project photography leads the site, supported by clear service information and contact routes built for mobile visitors.",
+    "faqKicker": "Before we start",
+    "faqTitle": "A few fair questions.",
+    "faqBudget": "Is my budget too small?",
+    "faqBudgetBody": "Tell me what you have in mind and what you’re comfortable spending. We can discuss a smaller first version, agree on the essentials, and leave room to add more later. You’ll know the scope and price before committing.",
+    "faqRemote": "Do we need to be local to each other?",
+    "faqRemoteBody": "No. I’m based in Westminster, Maryland, and work remotely with clients nationwide. We can plan, review, and hand over your project online.",
+    "faqStart": "What happens after I get in touch?",
+    "faqStartBody": "I’ll read your brief and reply personally. We’ll talk through what you need, what already exists, and a realistic scope. If it’s a good fit, I’ll put the proposed work and pricing in writing.",
+    "briefLabel": "02 / A quick project note",
+    "briefType": "I’m looking for",
+    "briefName": "Your name or business (optional)",
+    "briefMessage": "What would you like help with?",
+    "briefHint": "A couple of sentences is plenty. Please leave out passwords or sensitive information.",
+    "briefSend": "Open email with my brief",
+    "briefCopy": "Copy brief",
+    "briefNotice": "This opens your email app. Nothing is submitted here, and your brief isn’t stored on this site.",
+    "briefReady": "Your email app should open with your brief. Review it and send it from there. If nothing opens, copy the brief and email me directly.",
+    "briefCopied": "Brief copied. Paste it into an email to hello@chosenman.studio.",
+    "briefCopyFailed": "Copy isn’t available here. Select your text and email it directly to hello@chosenman.studio.",
+    "directEmail": "Prefer to email directly?",
+    "skipContent": "Skip to content",
+    "menuLabel": "Menu"
+  },
+  "es": {
+    "pageTitle": "Diseño web, apps y seguridad TI | Chosen Man Studio",
+    "navCapabilities": "Servicios",
+    "navWork": "Proyectos",
+    "navContact": "Contacto",
+    "availability": "Disponible para T3/T4",
+    "headerCta": "Iniciar un proyecto",
+    "heroKicker": "Diseño web · Desarrollo de apps · TI y seguridad",
+    "heroTitle": "Webs creadas<br><span>para ganarse el jornal.</span>",
+    "heroLede": "Has trabajado mucho en tu negocio. Démosle una web que lo demuestre. Soy Josh, diseñador y desarrollador web. Creo webs, aplicaciones y soluciones prácticas de TI y seguridad para pequeñas empresas en todo Estados Unidos.",
+    "heroCta": "Cuéntame tu proyecto",
+    "heroDirect": "Trato directo.<br><b>Trabajo bien hecho.</b>",
+    "serviceArea": "Raíces en Westminster · Alcance nacional · Colaboración remota",
+    "capabilitiesKicker": "Servicios principales",
+    "capabilitiesTitle": "Webs, apps, TI y asesoría.<br>Hechas para el negocio.",
+    "capabilitiesIntro": "Estrategia web, diseño UX, desarrollo de aplicaciones, sistemas de TI, seguridad y lanzamiento permanecen en las mismas manos.",
+    "cardOneIndex": "01 / WEBS A MEDIDA",
+    "cardOneTitle": "Tu mejor trabajo, bien presentado.",
+    "cardOneBody": "Webs personalizadas que causan una gran primera impresión, muestran lo que haces y facilitan el contacto. Un alcance claro, precios honestos y formas flexibles de trabajar hacen que una web bien construida sea más asequible de lo que muchos esperan.",
+    "cardOneSpecAHead": "Original",
+    "cardOneSpecABody": "diseño web",
+    "cardOneSpecBHead": "Alcance flexible",
+    "cardOneSpecBBody": "presupuestos reales",
+    "cardTwoIndex": "02 / DESARROLLO DE APPS",
+    "cardTwoTitle": "Apps creadas para el trabajo real",
+    "cardTwoBody": "Herramientas de negocio, portales de clientes, paneles y aplicaciones web adaptadas a la forma de trabajar de tu equipo.",
+    "cardThreeIndex": "03 / CONSULTORÍA DE TI Y SEGURIDAD",
+    "cardThreeTitle": "Sistemas claros. Seguridad sensata.",
+    "cardThreeBody": "Alojamiento seguro, control de accesos, copias de seguridad, proveedores, revisiones web y de aplicaciones, y preparación ante incidentes. Respaldado por amplia experiencia especializada en Inteligencia del Ejército, la NSA y la CIA.",
+    "cardFourIndex": "04 / COLABORACIÓN DIRECTA",
+    "cardFourTitle": "Un solo contacto. De principio a fin.",
+    "cardFourBody": "Sin capas comerciales ni traspasos confusos. Trabajas directamente con la persona que diseña y desarrolla tu proyecto, con tarifas justas y asequibles para gente honrada y trabajadora que quiere hacer crecer su negocio.",
+    "portfolioKicker": "Trabajo seleccionado",
+    "portfolioTitle": "Un par de proyectos<br>bien hechos.",
+    "portfolioIntro": "Dos proyectos muy distintos, cada uno diseñado para un público real y una tarea clara.",
+    "driverStatus": "App Android publicada",
+    "driverType": "Producto / utilidad Android",
+    "driverLink": "Ver el proyecto",
+    "driverBody": "Una aplicación Android para dispositivos portátiles que ayuda a encontrar y descargar paquetes de controladores gráficos para emuladores desde versiones públicas de GitHub. Diseñada, desarrollada, protegida y publicada por Chosen Man Studio.",
+    "driverTagOne": "Android",
+    "driverTagTwo": "Diseño de producto",
+    "driverTagThree": "Ingeniería de lanzamiento",
+    "romeoStatus": "Web de cliente activa",
+    "romeoType": "Cliente / web para contratista",
+    "romeoLink": "Visitar la web",
+    "romeoBody": "Una web rápida y centrada en el portafolio para un contratista de remodelación con licencia, construida con fotografías reales, servicios claros, visibilidad local y un camino directo para solicitar presupuesto.",
+    "romeoTagOne": "Diseño web",
+    "romeoTagTwo": "Desarrollo",
+    "romeoTagThree": "SEO local",
+    "veteranKicker": "Estudio propiedad de un veterano",
+    "veteranTitle": "El servicio marcó nuestro estándar.",
+    "veteranBody": "Chosen Man Studio pertenece a un veterano. Esa experiencia define nuestra forma de trabajar: comunicación clara, responsabilidad personal y determinación para terminar bien el trabajo. Nos enorgullece apoyar a otros veteranos y negocios de veteranos a ambos lados del Atlántico.",
+    "veteranNoteA": "Propiedad de un veterano",
+    "veteranNoteB": "Comunidad del Reino Unido y EE. UU.",
+    "veteranNoteC": "Apoyando a quienes sirvieron",
+    "contactKicker": "Hablarás con Josh",
+    "contactTitle": "¿Tienes un proyecto en mente?<br><span>Hablemos.</span>",
+    "contactBody": "Una idea nueva, una web antigua o algo que necesita arreglo. Cuéntame en qué punto estás. No necesitas un documento técnico para empezar.",
+    "footerMeta": "© 2026 · Westminster, Maryland<br>Trabajando con clientes en todo EE. UU.",
+    "exploreWork": "Ver los proyectos",
+    "selectorLabel": "01 / Tu próximo proyecto",
+    "selectorHeading": "¿Qué tienes en mente?",
+    "selectorIntro": "Elige un punto de partida. Los detalles los vemos juntos.",
+    "typeWeb": "Una web",
+    "typeApp": "Una app",
+    "typeSecurity": "TI y seguridad",
+    "typeUnsure": "Aún no lo sé",
+    "selectedCta": "Hablemos de esto",
+    "selectorFoot": "DIRECTO CON JOSH",
+    "webTitle": "Dales un motivo para contactarte.",
+    "webBody": "Una web que muestra tu trabajo, explica tus servicios y facilita el siguiente paso.",
+    "webPointA": "Un diseño que representa tu negocio",
+    "webPointB": "Páginas rápidas y cómodas en móvil y ordenador",
+    "webPointC": "Un camino claro para consultar o pedir presupuesto",
+    "appTitle": "Haz más fácil el trabajo diario.",
+    "appBody": "¿Una tarea repetitiva o una idea para un producto útil? Veamos qué merece la pena construir primero.",
+    "appPointA": "Una primera versión con un propósito claro",
+    "appPointB": "Interfaces pensadas para quienes las utilizan",
+    "appPointC": "Desarrollo, pruebas y publicación en las mismas manos",
+    "securityTitle": "Entiende mejor tus sistemas de TI.",
+    "securityBody": "Orientación práctica basada en experiencia especializada en inteligencia, explicada con claridad.",
+    "securityPointA": "Accesos, copias de seguridad, alojamiento y proveedores",
+    "securityPointB": "Revisiones de seguridad de webs y aplicaciones",
+    "securityPointC": "Prioridades concretas con un alcance razonable",
+    "insideProject": "Más sobre el proyecto",
+    "driverDetail": "El objetivo: facilitar la búsqueda de controladores gráficos en dispositivos Android portátiles. Una interfaz centrada en descubrir versiones y descargar paquetes, con diseño, desarrollo y publicación a cargo del estudio.",
+    "romeoDetail": "El objetivo: mostrar la calidad del trabajo de Romeo y facilitar las solicitudes de presupuesto. Las fotos reales protagonizan la web, con servicios claros y vías de contacto para visitantes desde el móvil.",
+    "faqKicker": "Antes de empezar",
+    "faqTitle": "Preguntas habituales.",
+    "faqBudget": "¿Mi presupuesto es demasiado pequeño?",
+    "faqBudgetBody": "Cuéntame qué necesitas y cuánto te resulta cómodo invertir. Podemos plantear una primera versión más pequeña, acordar lo esencial y ampliar después. Conocerás el alcance y el precio antes de comprometerte.",
+    "faqRemote": "¿Tenemos que estar cerca?",
+    "faqRemoteBody": "No. Estoy en Westminster, Maryland, y trabajo a distancia con clientes de todo Estados Unidos. Podemos planificar, revisar y entregar tu proyecto online.",
+    "faqStart": "¿Qué pasa después de contactar?",
+    "faqStartBody": "Leeré tu mensaje y responderé personalmente. Hablaremos de tus necesidades, de lo que ya tienes y de un alcance realista. Si encaja, recibirás la propuesta y el precio por escrito.",
+    "briefLabel": "02 / Unas líneas sobre tu proyecto",
+    "briefType": "Busco",
+    "briefName": "Tu nombre o negocio (opcional)",
+    "briefMessage": "¿Con qué necesitas ayuda?",
+    "briefHint": "Un par de frases bastan. No incluyas contraseñas ni información sensible.",
+    "briefSend": "Abrir correo con mi mensaje",
+    "briefCopy": "Copiar mensaje",
+    "briefNotice": "Se abrirá tu aplicación de correo. Aquí no se envía ni se guarda tu mensaje.",
+    "briefReady": "Tu aplicación de correo debería abrirse con tu mensaje. Revísalo y envíalo desde allí. Si no se abre, copia el mensaje y escríbeme directamente.",
+    "briefCopied": "Mensaje copiado. Pégalo en un correo a hello@chosenman.studio.",
+    "briefCopyFailed": "No se puede copiar aquí. Selecciona tu texto y envíalo a hello@chosenman.studio.",
+    "directEmail": "¿Prefieres escribir directamente?",
+    "skipContent": "Saltar al contenido",
+    "menuLabel": "Menú"
+  },
+  "yk": {
+    "pageTitle": "Web Design, App Development & IT Security | Chosen Man Studio",
+    "navCapabilities": "What we do",
+    "navWork": "Our work",
+    "navContact": "Gi’ us a shout",
+    "availability": "Taking bookings Q3/Q4",
+    "headerCta": "Gi’ us a shout",
+    "heroKicker": "Web design · App development · IT & security",
+    "heroTitle": "Websites done reyt.<br><span>Built to earn their keep.</span>",
+    "heroLede": "Tha’s put a proper shift into thy business. Let’s give it a website that shows it. I’m Josh. I design and build websites, apps, and sort practical IT and security for small firms right across t’country. Yorkshire roots, Westminster base.",
+    "heroCta": "Tell me what tha’s planning",
+    "heroDirect": "No faff. No flannel.<br><b>Made proper.</b>",
+    "serviceArea": "Westminster roots · Work sent nationwide · No distance, no bother",
+    "capabilitiesKicker": "What we’re good at",
+    "capabilitiesTitle": "Websites, apps, IT, and sound advice.<br>Made proper.",
+    "capabilitiesIntro": "Web strategy, design, app development, practical IT, security advice, and launch stay with one pair of hands. No passing thee round t’houses.",
+    "cardOneIndex": "01 / PROPER WEBSITES",
+    "cardOneTitle": "Thy best work, shown proper.",
+    "cardOneBody": "A one-off website that looks reyt, shows folk what tha does, and makes it dead easy for ’em to get in touch. Clear scope, fair prices, and flexible ways to work mean a proper website can cost less than tha might reckon.",
+    "cardOneSpecAHead": "Nowt off t’shelf",
+    "cardOneSpecABody": "web design",
+    "cardOneSpecBHead": "Fairly priced",
+    "cardOneSpecBBody": "made to fit t’job",
+    "cardTwoIndex": "02 / APP DEVELOPMENT",
+    "cardTwoTitle": "Apps built round how tha works",
+    "cardTwoBody": "Business tools, customer portals, dashboards, and web apps made to fit t’job, not t’other way round.",
+    "cardThreeIndex": "03 / IT & SECURITY",
+    "cardThreeTitle": "Systems sorted. Security done reyt.",
+    "cardThreeBody": "Secure hosting, account access, backups, suppliers, website and app reviews, and being ready when summat goes wrong. Backed by extensive specialist experience across Army Intelligence, the NSA, and the CIA.",
+    "cardFourIndex": "04 / STRAIGHT DEALING",
+    "cardFourTitle": "One person to deal with. Start to finish.",
+    "cardFourBody": "No sales patter and no being passed from pillar to post. Tha deals direct with t’person designing and building thy project, at fair, affordable rates for honest, hardworking folk growing a business.",
+    "portfolioKicker": "A bit o’work",
+    "portfolioTitle": "A couple o’things<br>made proper.",
+    "portfolioIntro": "Two very different jobs, each built for real folk with a clear job to get done.",
+    "driverStatus": "Android app, out in t’wild",
+    "driverType": "Product / Android utility",
+    "driverLink": "Have a look",
+    "driverBody": "A handheld-first Android app that helps folk find and download emulator graphics-driver packages from public GitHub releases. Designed, built, secured, and released by Chosen Man Studio.",
+    "driverTagOne": "Android",
+    "driverTagTwo": "Product design",
+    "driverTagThree": "Release engineering",
+    "romeoStatus": "Live client website",
+    "romeoType": "Client / trades website",
+    "romeoLink": "See t’website",
+    "romeoBody": "A quick, portfolio-first website for a licensed remodeling contractor, built round real project photos, clear services, local search, and a straight path to getting an estimate.",
+    "romeoTagOne": "Web design",
+    "romeoTagTwo": "Development",
+    "romeoTagThree": "Local SEO",
+    "veteranKicker": "Veteran-owned studio",
+    "veteranTitle": "Service set t’standard.",
+    "veteranBody": "Chosen Man Studio is veteran-owned. We say what we mean, stand by our work, and get t’job finished proper. We’re proud to back fellow veterans and veteran-owned businesses on both sides o’t’Atlantic.",
+    "veteranNoteA": "Veteran-owned",
+    "veteranNoteB": "UK & US community",
+    "veteranNoteC": "Backing them that served",
+    "contactKicker": "Tha’ll be talking to Josh",
+    "contactTitle": "Got summat needs doing?<br><span>Let’s have a word.</span>",
+    "contactBody": "A new idea, an old website, or summat that wants sorting. Tell me where tha’s at. No need for a fancy brief, just gi’ us a shout.",
+    "footerMeta": "© 2026 · Westminster, Maryland<br>Working wi’clients all over t’country",
+    "exploreWork": "Have a look at t’work",
+    "selectorLabel": "01 / What’s t’next job?",
+    "selectorHeading": "What’s tha got in mind?",
+    "selectorIntro": "Pick where tha wants to start. We’ll sort t’details together.",
+    "typeWeb": "A website",
+    "typeApp": "An app",
+    "typeSecurity": "IT & security",
+    "typeUnsure": "Not sure yet",
+    "selectedCta": "Let’s have a word",
+    "selectorFoot": "STRAIGHT TO JOSH",
+    "webTitle": "Give folk a reason to get in touch.",
+    "webBody": "A website that shows thy graft, tells folk what tha does, and makes it dead easy to get in touch.",
+    "webPointA": "A look that’s thine, not off t’shelf",
+    "webPointB": "Quick pages, whether on a phone or a laptop",
+    "webPointC": "A straight path to asking for a quote",
+    "appTitle": "Take a bit o’faff out o’t’day.",
+    "appBody": "Doing t’same job over and over? Got an idea for summat useful? Let’s work out what wants building first.",
+    "appPointA": "A first version that does its job proper",
+    "appPointB": "Built round t’folk who’ll actually use it",
+    "appPointC": "Design, building, testing, and getting it out there",
+    "securityTitle": "Get thy IT in order.",
+    "securityBody": "Practical advice backed by specialist intelligence experience. Explained proper, so tha knows what to do with it.",
+    "securityPointA": "Access, backups, hosting, and picking suppliers",
+    "securityPointB": "A proper look at website and app security",
+    "securityPointC": "What needs sorting first, at a sensible scope",
+    "insideProject": "A closer look at t’job",
+    "driverDetail": "T’job: make finding graphics drivers less of a faff on an Android handheld. Release discovery and downloads in one focused app, designed, built, and released by t’studio.",
+    "romeoDetail": "T’job: show homeowners what Romeo can do and make it easy to ask for a quote. Real project photos do t’talking, with clear services and contact routes that work reyt on a phone.",
+    "faqKicker": "Before we crack on",
+    "faqTitle": "Fair questions, these.",
+    "faqBudget": "Is my budget too small?",
+    "faqBudgetBody": "Tell me what tha’s after and what tha’s comfortable spending. We can start smaller, sort t’essentials, and add more when tha’s ready. Tha’ll know t’scope and price before agreeing to owt.",
+    "faqRemote": "Does tha need to be nearby?",
+    "faqRemoteBody": "Nay. I’m based in Westminster, Maryland, and work wi’folk right across t’country. We can plan it, review it, and hand it over online. No trek required.",
+    "faqStart": "What happens when I gi’ thee a shout?",
+    "faqStartBody": "I’ll read thy note and reply meself. We’ll talk through what wants doing, what tha’s already got, and a sensible scope. If it fits, I’ll put t’work and price in writing.",
+    "briefLabel": "02 / A quick note about t’job",
+    "briefType": "I’m after",
+    "briefName": "Thy name or business (optional)",
+    "briefMessage": "What wants sorting?",
+    "briefHint": "A couple o’sentences will do. Keep passwords and sensitive stuff out of it.",
+    "briefSend": "Open email wi’my brief",
+    "briefCopy": "Copy t’brief",
+    "briefNotice": "This opens thy email app. Nowt’s sent from here and thy note isn’t saved on t’site.",
+    "briefReady": "Thy email app should open wi’thy brief. Give it a read and send it from there. If nowt opens, copy t’brief and email me direct.",
+    "briefCopied": "Brief copied. Pop it in an email to hello@chosenman.studio.",
+    "briefCopyFailed": "Can’t copy it here. Select thy text and email it to hello@chosenman.studio.",
+    "directEmail": "Rather email me direct?",
+    "skipContent": "Skip to t’content",
+    "menuLabel": "Menu"
+  }
+};
       const setLanguage = (language, persist = true) => {
         const selected = translations[language] ? language : 'en';
+        currentLanguage = selected;
         const copy = translations[selected];
+        root.querySelector('#cms-brief-feedback').textContent = '';
         root.querySelectorAll('[data-i18n]').forEach((element) => {
           const value = copy[element.dataset.i18n];
           if (value) element.textContent = value;
@@ -536,14 +921,62 @@
           try { localStorage.setItem('cms-language', selected); } catch (_) {}
         }
       };
-      const views = {
-        build: `<span class="comment">// chosen-man.studio / project brief</span>\n\n<span class="key">const</span> website = {\n  firstImpression: <span class="value">"credible"</span>,\n  showcase: <span class="value">"real work"</span>,\n  enquiries: <span class="value">"simple"</span>,\n  mobile: <span class="value">"fast"</span>\n};\n\n<span class="key">await</span> studio.designWithPurpose();\n<span class="key">await</span> studio.buildItProperly();\n\n<span class="comment">// status: ready for launch</span>`,
-        audit: `<span class="comment">[FIELD AUDIT / 14:32:08]</span>\n\n<span class="key">✓</span> semantic structure       <span class="value">passed</span>\n<span class="key">✓</span> keyboard navigation      <span class="value">passed</span>\n<span class="key">✓</span> render path              <span class="value">lean</span>\n<span class="key">✓</span> third-party weight       <span class="value">controlled</span>\n<span class="key">✓</span> ownership handoff        <span class="value">documented</span>\n\n<span class="comment">No template debt detected.\nNo agency layers present.</span>\n\n<span class="key">RESULT</span>  <span class="value">FIT FOR PURPOSE</span>`
+      const form = root.querySelector('#cms-project-brief');
+      const projectType = root.querySelector('#cms-brief-type');
+      const feedback = root.querySelector('#cms-brief-feedback');
+      const selectProject = (project) => {
+        if (!['web', 'app', 'security'].includes(project)) return;
+        selectedProject = project;
+        root.querySelectorAll('[data-project]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.project === project)));
+        root.querySelectorAll('.cms-project-panel').forEach(panel => { panel.hidden = panel.id !== 'cms-project-' + project; });
       };
-      root.querySelectorAll('[data-code-tab]').forEach((tab) => tab.addEventListener('click', () => {
-        root.querySelectorAll('[data-code-tab]').forEach((item) => item.setAttribute('aria-pressed', String(item === tab)));
-        output.innerHTML = views[tab.dataset.codeTab];
-      }));
+      root.querySelector('.cms-project-choices').hidden = false;
+      form.hidden = false;
+      root.querySelectorAll('[data-project]').forEach(button => button.addEventListener('click', () => selectProject(button.dataset.project)));
+      root.querySelector('#cms-project-start').addEventListener('click', () => { projectType.value = selectedProject; });
+      projectType.addEventListener('change', () => { selectProject(projectType.value); feedback.textContent = ''; });
+      const makeBrief = () => {
+        const copy = translations[currentLanguage];
+        const name = root.querySelector('#cms-brief-name').value.trim();
+        const message = root.querySelector('#cms-brief-message').value.trim();
+        const type = projectType.options[projectType.selectedIndex].text;
+        return (name ? name + '\n\n' : '') + copy.briefType + ': ' + type + '\n\n' + message;
+      };
+      const validBrief = () => {
+        const message = root.querySelector('#cms-brief-message');
+        message.value = message.value.trim();
+        return form.reportValidity();
+      };
+      form.addEventListener('submit', event => {
+        event.preventDefault();
+        if (!validBrief()) return;
+        const subject = 'Project inquiry: ' + projectType.options[projectType.selectedIndex].text;
+        window.location.href = 'mailto:hello@chosenman.studio?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(makeBrief());
+        feedback.textContent = translations[currentLanguage].briefReady;
+      });
+      root.querySelector('.cms-copy-brief').addEventListener('click', async () => {
+        if (!validBrief()) return;
+        try {
+          await navigator.clipboard.writeText(makeBrief());
+          feedback.textContent = translations[currentLanguage].briefCopied;
+        } catch (_) {
+          feedback.textContent = translations[currentLanguage].briefCopyFailed;
+        }
+      });
+      const menu = root.querySelector('.cms-menu-toggle');
+      const nav = root.querySelector('.cms-nav');
+      menu.hidden = false;
+      const closeMenu = () => { menu.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); };
+      menu.addEventListener('click', () => {
+        const opening = menu.getAttribute('aria-expanded') !== 'true';
+        menu.setAttribute('aria-expanded', String(opening));
+        nav.classList.toggle('is-open', opening);
+      });
+      root.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') { closeMenu(); menu.focus(); }
+      });
+      document.addEventListener('click', event => { if (!event.target.closest('.cms-header')) closeMenu(); });
+      matchMedia('(min-width: 861px)').addEventListener('change', closeMenu);
       root.querySelectorAll('[data-language]').forEach((button) => button.addEventListener('click', () => setLanguage(button.dataset.language)));
       let savedLanguage = 'en';
       try { savedLanguage = localStorage.getItem('cms-language') || 'en'; } catch (_) {}
@@ -553,7 +986,8 @@
       const easterVideo = root.querySelector('#cms-easter-video');
       eggTrigger.addEventListener('click', () => {
         const isOpen = eggTrigger.getAttribute('aria-expanded') === 'true';
-        if (!isOpen && !easterVideo.src) easterVideo.src = easterVideo.dataset.src;
+        if (!isOpen) easterVideo.src = easterVideo.dataset.src;
+        else easterVideo.removeAttribute('src');
         eggTrigger.setAttribute('aria-expanded', String(!isOpen));
         easterEgg.setAttribute('aria-hidden', String(isOpen));
         easterEgg.inert = isOpen;
@@ -563,9 +997,14 @@
         const target = root.querySelector(link.getAttribute('href'));
         if (!target) return;
         event.preventDefault();
+        closeMenu();
+        target.setAttribute('tabindex', '-1');
+        target.focus({preventScroll: true});
         target.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start'});
       }));
-      if (window.lucide) window.lucide.createIcons({attrs: {width: 16, height: 16}});
+      const initializeIcons = () => { if (window.lucide) window.lucide.createIcons({attrs: {width: 16, height: 16}}); };
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initializeIcons, {once: true});
+      else initializeIcons();
     })();
   </script>
 </div>
